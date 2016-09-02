@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
-
+from plone import api
+from Products.CMFPlone.interfaces import constrains
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
@@ -12,6 +13,45 @@ class HiddenProfiles(object):
             '{{{ package.dottedname }}}:uninstall',
         ]
 
+def setup_customizations(context):
+    """Import script for customizations"""
+    # run customizations
+    # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
+    if True: return
+
+    if context.readDataFile('{{{ package.dottedname }}}.marker.txt') is None:
+        return
+
+    api.content.delete(api.content.get('/news'))
+    api.content.delete(api.content.get('/Members'))
+    api.content.delete(api.content.get('/front-page'))
+    api.content.delete(api.content.get('/events'))
+
+    portal = api.portal.get()
+ 
+    #check for the existence of meetings and documents
+    #
+   if not api.content.get('/meetings'):
+       meetings = api.content.create(
+        portal,
+        'Folder',
+        id='meetings',
+        title='Meetings'
+        )
+   api.content.transition(meetings, transition='publish')
+   behavior = constrains.ISelectableConstrainTypes(meetings)
+   behavior.setConstrainTypesMode(constrains.ENABLED)
+   behavior.setLocallyAllowedTypes([ 'Folder'])
+   behavior.setImmediatelyAddableTypes([ 'Folder'])
+ 
+   if not api.content.get('/documents'):
+      documents = api.content.create(
+       portal,
+       'Folder',
+       id='documents',
+       title='Documents'
+      )
+   api.content.transition(documents, transition='publish')
 
 def post_install(context):
     """Post install script"""

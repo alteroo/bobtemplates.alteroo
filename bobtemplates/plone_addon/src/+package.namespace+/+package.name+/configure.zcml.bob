@@ -39,6 +39,13 @@
       post_handler=".setuphandlers.uninstall"
       />
 
+   <genericsetup:importStep
+    name="{{{ package.dottedname }}} site setup"
+    title="Customer Site import handlers ({{{ package.dottedname }}}"
+    description="customer customizations"
+handler="customer.site.setuphandlers.setup_customizations"
+/>
+
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="{{{ package.dottedname }}}-hiddenprofiles" />

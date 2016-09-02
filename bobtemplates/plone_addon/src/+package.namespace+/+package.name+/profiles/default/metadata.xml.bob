@@ -2,6 +2,8 @@
 <metadata>
   <version>1000</version>
   <dependencies>
+    <dependency>profile-collective.routes:default</dependency>
+    <dependency>profile-collective.z3cform.norobots:default</dependency>
 {{% if package.type == 'Dexterity' %}}
     <dependency>profile-plone.app.dexterity:default</dependency>
 {{% endif %}}
