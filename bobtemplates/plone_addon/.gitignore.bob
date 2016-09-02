@@ -1,3 +1,26 @@
+#common tarball names
+content.tar.gz
+*
+eggs.tar.gz 
+.pem
+
+
+#setup scripts, resources and virtualenvs
+sethttps.py
+
+temp_resources/
+
+# ignore common virtualenv names
+venv
+env
+
+# ignore zed and vim files and other ide files
+.zedstate
+.*.sw[op]
+.project
+.pydevproject
+.settings/
+
 .coverage
 *.egg-info
 *.log
