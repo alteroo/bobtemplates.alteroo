@@ -14,9 +14,9 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='bobtemplates.plone',
+    name='bobtemplates.alteroo',
     version=version,
-    description="Templates for Plone projects.",
+    description="Templates for Alteroo projects.",
     long_description=long_description,
     classifiers=[
         "Environment :: Console",
@@ -30,9 +30,9 @@ setup(
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
     keywords='web plone zope skeleton project',
-    author='Plone Foundation',
-    author_email='plone-developers@lists.sourceforge.net',
-    url='https://github.com/plone/bobtemplates.plone',
+    author='Alteroo',
+    author_email='david@alteroo.com',
+    url='https://github.com/alteroo/bobtemplates.alteroo',
     license='GPL version 2',
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
