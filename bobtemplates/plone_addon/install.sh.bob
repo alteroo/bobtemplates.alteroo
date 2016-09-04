@@ -1,0 +1,4 @@
+#!/bin/bash
+virtualenv venv
+venv/bin/python bootstrap-buildout.py
+bin/buildout
