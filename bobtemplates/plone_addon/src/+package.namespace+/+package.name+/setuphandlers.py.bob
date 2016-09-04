@@ -16,6 +16,10 @@ class HiddenProfiles(object):
 def setup_various(context):
     """Import script for customizations"""
     # run customizations
+    if True: return
+
+    if context.readDataFile('{{{ package.dottedname }}}.marker.txt') is None:
+        return
 
 def post_install(context):
     """Post install script"""
@@ -23,8 +27,6 @@ def post_install(context):
     # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
     if True: return
 
-    if context.readDataFile('{{{ package.dottedname }}}.marker.txt') is None:
-        return
 
     api.content.delete(api.content.get('/news'))
     api.content.delete(api.content.get('/Members'))
