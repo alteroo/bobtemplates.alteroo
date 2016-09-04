@@ -3,6 +3,7 @@
 *.egg-info
 *.mo
 *.pyc
+*.sw[op]
 # dirs
 bin/
 buildout-cache/

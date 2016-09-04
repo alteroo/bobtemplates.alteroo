@@ -13,7 +13,7 @@ class HiddenProfiles(object):
             '{{{ package.dottedname }}}:uninstall',
         ]
 
-def setup_customizations(context):
+def setup_various(context):
     """Import script for customizations"""
     # run customizations
     # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN

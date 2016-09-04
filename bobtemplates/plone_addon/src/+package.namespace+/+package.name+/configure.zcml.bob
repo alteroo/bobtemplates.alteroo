@@ -43,7 +43,7 @@
     name="{{{ package.dottedname }}} site setup"
     title="Customer Site import handlers ({{{ package.dottedname }}}"
     description="customer customizations"
-handler="customer.site.setuphandlers.setup_customizations"
+handler="customer.site.setuphandlers.setup_various"
 />
 
   <utility
