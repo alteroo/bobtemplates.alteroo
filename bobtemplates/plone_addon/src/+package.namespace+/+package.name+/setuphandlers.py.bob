@@ -16,6 +16,10 @@ class HiddenProfiles(object):
 def setup_various(context):
     """Import script for customizations"""
     # run customizations
+
+def post_install(context):
+    """Post install script"""
+    # Do something at the end of the installation of this package.
     # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
     if True: return
 
@@ -38,24 +42,20 @@ def setup_various(context):
         id='meetings',
         title='Meetings'
         )
-   api.content.transition(meetings, transition='publish')
-   behavior = constrains.ISelectableConstrainTypes(meetings)
-   behavior.setConstrainTypesMode(constrains.ENABLED)
-   behavior.setLocallyAllowedTypes([ 'Folder'])
-   behavior.setImmediatelyAddableTypes([ 'Folder'])
+    api.content.transition(meetings, transition='publish')
+    behavior = constrains.ISelectableConstrainTypes(meetings)
+    behavior.setConstrainTypesMode(constrains.ENABLED)
+    behavior.setLocallyAllowedTypes([ 'Folder'])
+    behavior.setImmediatelyAddableTypes([ 'Folder'])
  
-   if not api.content.get('/documents'):
+    if not api.content.get('/documents'):
       documents = api.content.create(
        portal,
        'Folder',
        id='documents',
        title='Documents'
       )
-   api.content.transition(documents, transition='publish')
-
-def post_install(context):
-    """Post install script"""
-    # Do something at the end of the installation of this package.
+    api.content.transition(documents, transition='publish')
 
 
 def uninstall(context):
