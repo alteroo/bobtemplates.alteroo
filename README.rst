@@ -96,7 +96,7 @@ Use in a buildout
 This creates a mrbob-executable in your bin-directory.
 Call it from the ``src``-directory of your Plone project like this.::
 
-    $ ../bin/mrbob -O collective.foo bobtemplates:plone_addon
+    $ ../bin/mrbob -O collective.foo bobtemplates:roo_addon
 
 
 Installation in a virtualenv
@@ -112,7 +112,7 @@ With ``pip 6.0`` or newer ``mr.bob`` will automatically be installed as a depend
 
 Now you can use it like this::
 
-    $ mrbob -O collective.foo bobtemplates:plone_addon
+    $ mrbob -O collective.foo bobtemplates:roo_addon
 
 See `the documentation of mr.bob <http://mrbob.readthedocs.org/en/latest/>`_  for further information.
 
@@ -120,9 +120,9 @@ See `the documentation of mr.bob <http://mrbob.readthedocs.org/en/latest/>`_  fo
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/plone/bobtemplates.plone/issues
-- Source Code: https://github.com/plone/bobtemplates.plone
-- Documentation: http://docs.plone.org/develop/addons/bobtemplates.plone/bobtemplates.plone/README.html
+- Issue Tracker: https://github.com/alteroo/bobtemplates.alteroo/issues
+- Source Code: https://github.com/alteroo/bobtemplates.alteroo
+- Documentation: 
 
 
 Support

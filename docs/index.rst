@@ -8,13 +8,13 @@ To create a package like ``collective.myaddon``
 .. code-block:: shell
 
     pip install bobtemplates.plone
-    mrbob -O collective.myaddon bobtemplates:plone_addon
+    mrbob -O collective.myaddon bobtemplates:roo_addon
 
 You can also create a package with nested namespace
 
 .. code-block:: shell
 
-    mrbob -O collective.foo.myaddon bobtemplates:plone_addon
+    mrbob -O collective.foo.myaddon bobtemplates:roo_addon
 
 
 Options
@@ -104,7 +104,7 @@ Call it from the ``src``-directory of your Plone project like this.
 
 .. code-block:: shell
 
-    ../bin/mrbob -O collective.foo bobtemplates:plone_addon
+    ../bin/mrbob -O collective.foo bobtemplates:roo_addon
 
 
 Installation in a virtualenv
@@ -126,7 +126,7 @@ Now you can use it like this
 
 .. code-block:: shell
 
-    mrbob -O collective.foo bobtemplates:plone_addon
+    mrbob -O collective.foo bobtemplates:roo_addon
 
 See `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ documentation for further information.
 

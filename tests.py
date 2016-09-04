@@ -36,18 +36,18 @@ class BaseTemplateTest(unittest.TestCase):
 
 
 class PloneTemplateTest(BaseTemplateTest):
-    """Tests for the `plone_addon` template."""
+    """Tests for the `roo_addon` template."""
     template = ''
     project = ''
     answers_file = ''
 
-    def test_plone_addon_template(self):
-        """Test the `plone_addon` template.
+    def test_roo_addon_template(self):
+        """Test the `roo_addon` template.
 
         Generate a project from a template, test which files were created
         and run all tests in the generated package.
         """
-        self.template = 'plone_addon'
+        self.template = 'roo_addon'
         self.project = 'collective.foo'
         self.answers_file = 'nosetests_answers.ini'
         self.maxDiff = None
@@ -108,13 +108,13 @@ class PloneTemplateTest(BaseTemplateTest):
             ]
         )
 
-    def test_plone_addon_nested_template(self):
-        """Test the `plone_addon_nested` template.
+    def test_roo_addon_nested_template(self):
+        """Test the `roo_addon_nested` template.
 
         Generate a project from a template, test which files were created
         and run all tests in the generated package.
         """
-        self.template = 'plone_addon'
+        self.template = 'roo_addon'
         self.project = 'collective.foo.bar'
         self.answers_file = 'nosetests_answers_nested.ini'
         self.maxDiff = None

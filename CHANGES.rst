@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0.0 (unreleased)
+------------------
+
+- Forked from bobtemplates.plone
+
 1.0.5 (unreleased)
 ------------------
 

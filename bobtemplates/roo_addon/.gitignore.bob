@@ -38,7 +38,7 @@ lib/
 local/
 parts/
 src/*
-test.plone_addon/
+test.roo_addon/
 var/
 # files
 .installed.cfg
