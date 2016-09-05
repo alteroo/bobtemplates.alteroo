@@ -1,7 +1,8 @@
 #!/bin/bash
 sudo apt-get update
 sudo apt-get install python-dev python-virtualenv libssl-dev libxml2-dev -y
-sudo apt-get install  libxslt1-dev libbz2-dev python-tk python-gdbm -y
+sudo apt-get install  libxslt1-dev libbz2-dev python-pip python-tk python-gdbm -y
+sudo pip install --upgrade python-gitlab
 
 # spinner borrowed from http://fitnr.com/showing-a-bash-spinner.html
 

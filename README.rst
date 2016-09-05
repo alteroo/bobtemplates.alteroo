@@ -22,16 +22,18 @@
     :target: https://pypi.python.org/pypi/bobtemplates.plone/
     :alt: License
 
-bobtemplates.plone
-==================
+bobtemplates.alteroo
+=====================
 
-``bobtemplates.plone`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate packages for Plone projects.
+``bobtemplates.alteroo`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate packages for Plone projects.
+It is a fork of ``bobtemplates.plone`` with additional 'opinions' that are specific to the way that Alteroo configures customer projects.
 
 
 Features
 --------
 
-Package created with ``bobtemplates.plone`` use the current best-practices when creating an add-on.
+Package created with ``bobtemplates.alteroo`` use the current best-practices when creating an add-on.
+Additionally they include some things that match the Alteroo approach.
 
 Buildout
     The package is contained in a buildout that allows you to build Plone with the new package installed for testing-purposes.

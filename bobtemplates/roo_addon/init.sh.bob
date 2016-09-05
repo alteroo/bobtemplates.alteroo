@@ -1,5 +1,21 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
+echo 
+while true; do
+    read -p "What is your gitlab token? you can find it at https://gitlab.com/profile/account" token
+cat > $HOME/.python-gitlab.cfg << EOF
+[global]
+default = gitlab
+ssl_verify = true
+timeout = 5
+
+[gitlab]
+url = https://gitlab.com
+private_token = $token
+EOF
+done
+groupid=$(gitlab group create --name alteroo-{{{ package.namespace }}} --path alteroo-{{{ package.namespace }}} | grep id | cut -d: -f2)
+gitlab project create --name {{{ package.namespace }}}.site --namespace-id $groupid
 bash prime.sh
 bash install.sh
