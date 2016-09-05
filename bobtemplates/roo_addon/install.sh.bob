@@ -2,3 +2,5 @@
 virtualenv venv
 venv/bin/python bootstrap-buildout.py
 bin/buildout
+echo "----> Adding a Plone site"
+bin/instance run scripts/addSite.py Plone

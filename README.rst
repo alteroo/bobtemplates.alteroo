@@ -36,6 +36,16 @@ This package is most commonly used for initializing a customer site.
 We assume you have sudo privileges on your development box
 We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions)
 
+**Step 0 - Get your gitlab private token**
+
+BEFORE YOU START make a note of your gitlab private token
+You can find your gitlab private token at https://gitlab.com/profile/account
+
+**Step 1 - Use mrbob to initialize the site**
+
+This step will initilize the site configuration and add it to gitlab (it uses the alteroo in the namespace)
+It then creates a test installation of the site. 
+
 ::
 
 	virtualenv bobenv
@@ -46,6 +56,12 @@ We also assume that you're using Ubuntu 14.04 (it may work on other deb type dis
         bobenv/bin/mrbob -O $customer.site https://github.com/alteroo/bobtemplates.alteroo/archive/master.zip#bobtemplates.alteroo-master/bobtemplates/roo_addon
 
         bash $customer.site/init.sh
+
+To view the site go to the customer.site directory and launch
+::
+
+        cd $customer.site
+        bin/instance fg
 
 
 Features
