@@ -4,6 +4,11 @@ content.tar.gz
 eggs.tar.gz 
 .pem
 
+# these are ignored
+# because there is no need to automate git setup a second time
+git-init.sh
+gitlab-init.sh
+init.sh
 
 #setup scripts, resources and virtualenvs
 sethttps.py
