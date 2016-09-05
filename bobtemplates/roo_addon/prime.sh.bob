@@ -13,13 +13,14 @@ INSTALLERFOLDER=Plone-${PLONE_VERSION}-UnifiedInstaller
 INSTALLERURL=https://launchpad.net/plone/${PLONE_MAJOR_VERSION}/${PLONE_VERSION}/+download/Plone-${PLONE_VERSION}-UnifiedInstaller.tgz
 
 if [ -z ${C9_USER+x} ]; then
-     echo "This is not a C9 based install, this doesn't always work";
+     echo "----> This is not a C9 based install, this doesn't always work";
      BUILDOUTDIR=$HOME/plone
 else
-     echo "This is a C9 install. Hi '$C9_USER'";
+     echo "----> This is a C9 install. Hi '$C9_USER'";
      BUILDOUTDIR=$HOME/workspace
 fi
-echo "Your buildout directory will be $BUILDOUTDIR"
+echo "Your primed buildout directory will be $BUILDOUTDIR"
+echo "Please DO NOT DELETE"
 
 
 spinner()
@@ -50,7 +51,7 @@ tar xfz $INSTALLERFILE
 cd $INSTALLERFOLDER
 
 
-echo "installing (first pass)"
+echo "installing (best effort)"
 ./install.sh standalone --target=$BUILDOUTDIR &
 spinner $!
 

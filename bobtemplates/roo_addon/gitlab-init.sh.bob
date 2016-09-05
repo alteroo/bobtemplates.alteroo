@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ ! -f $HOME/.python-gitlab.cfg ]; then
+    echo "We did not detect a ~/.python-gitlab.cfg file (needed to automate gitlab tasks"
+    echo " "
+    echo "Let me help you to create that file now"
+    read -p "What is your gitlab token? you can find it at https://gitlab.com/profile/account: " token
+cat > $HOME/.python-gitlab.cfg << EOF
+[global]
+default = gitlab
+ssl_verify = true
+timeout = 5
+
+[gitlab]
+url = https://gitlab.com
+private_token = $token
+EOF
+fi
+groupid=$(gitlab group create --name alteroo-{{{ package.namespace }}} --path alteroo-{{{ package.namespace }}} | grep id | cut -d: -f2)
+gitlab project create --name {{{ package.namespace }}}.site --namespace-id $groupid
