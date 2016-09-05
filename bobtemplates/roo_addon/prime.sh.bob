@@ -36,7 +36,7 @@ spinner()
     done
     printf "    \b\b\b\b"
 }
-
+if [ ! -f $HOME/.python-gitlab.cfg ]; then
 echo "getting the installer"
 if [ -s $INSTALLERFILE ]  
 then  
@@ -66,18 +66,9 @@ socket-timeout = 3
 EOF
 
 mkdir -p $BUILDOUTDIR/buildout-cache/extends
-echo "***********************************"
-echo "**                               **"
-echo "**  Plone install complete       **"
-echo "**                               **"
-echo "**  the commands will not work   **"
-echo "**  in this console. Close       **"
-echo "**  this terminal                **"
-echo "**  in a newly opened terminal   **"
-echo "**  then and run:                **"
-echo "**                               **"
-echo "**    cd $BUILDOUTDIR/zinstance  **"
-echo "**    bin/instance fg            **"
-echo "**                               **"
-echo "***********************************"
+else
+
+echo "----> Found the buildout/defaults.cfg file, this has been primed before"
+echo "----> Skipping the priming step"
+fi
 
