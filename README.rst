@@ -29,11 +29,40 @@ bobtemplates.alteroo
 It is a fork of ``bobtemplates.plone`` with additional 'opinions' that are specific to the way that Alteroo configures customer projects.
 
 
+Quickstart
+----------
+This package is most commonly used for initializing a customer site.
+
+We assume you have sudo privileges on your development box
+We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions)
+
+::
+
+	virtualenv bobenv
+	bobenv/bin/pip install --upgrade pip
+	bobenv/bin/pip install bobtemplates.plone
+
+        export customer=acme
+        bobenv/bin/mrbob -O $customer.site https://github.com/alteroo/bobtemplates.alteroo/archive/master.zip#bobtemplates.alteroo-master/bobtemplates/roo_addon
+
+        bash $customer.site/init.sh
+
+
 Features
 --------
 
 Package created with ``bobtemplates.alteroo`` use the current best-practices when creating an add-on.
 Additionally they include some things that match the Alteroo approach.
+
+Sites generated with this package include the following add-ons:
+
+rapido.plone
+gloss
+collective.routes
+collective.z3cform.norobots
+wildcard.media
+
+
 
 Buildout
     The package is contained in a buildout that allows you to build Plone with the new package installed for testing-purposes.
