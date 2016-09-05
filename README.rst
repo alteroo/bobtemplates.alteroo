@@ -43,7 +43,7 @@ You can find your gitlab private token at https://gitlab.com/profile/account
 
 **Step 1 - Use mrbob to initialize the site**
 
-This step will initilize the site configuration and add it to gitlab (it uses the alteroo in the namespace)
+This step will initilize the site configuration and add it to gitlab (it currently uses 'alteroo' in the namespace)
 It then creates a test installation of the site. 
 
 ::
