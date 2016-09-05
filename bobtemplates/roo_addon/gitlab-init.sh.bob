@@ -16,4 +16,4 @@ private_token = $token
 EOF
 fi
 groupid=$(gitlab group create --name alteroo-{{{ package.namespace }}} --path alteroo-{{{ package.namespace }}} | grep id | cut -d: -f2)
-gitlab project create --name {{{ package.namespace }}}.site --namespace-id $groupid
+gitlab project create --name {{{ package.namespace }}}.site --path {{{ package.namespace }}}.site --namespace-id $groupid
