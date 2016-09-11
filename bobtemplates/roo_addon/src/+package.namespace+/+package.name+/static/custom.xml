@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+    
+    <!-- for power users -->
+    <!-- add your customizations here -->
+    <!-- <drop css:content=".documentFirstHeading" /> -->
+   <!-- uncoment and modify the rules below to dynamically link using matching gloss css classes -->
+   <!-- 
+      <copy attributes="href" css:theme="a.gl-link-registration"
+                        css:content="a.gl-link-registration"
+       href="@@rapido/app/block/frontlinks" />
+      <copy attributes="href" css:theme="a.gl-link-about-us"
+                        css:content="a.gl-link-about-us"
+       href="@@rapido/app/block/frontlinks" />
+   -->
+    
+</rules>

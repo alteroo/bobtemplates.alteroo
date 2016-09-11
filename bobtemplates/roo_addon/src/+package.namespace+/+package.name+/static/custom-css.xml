@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+    <before css:theme-children="html head"> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    </before>
+        
+    <after css:theme-children="html head"> 
+      <style>
+        @media screen and (min-width: 1200px){
+    .w-container {
+       max-width: 1170px;
+    }
+}
+        .news-image-container p {
+    background: #e36d0b;
+    padding: 24px;
+    margin-bottom: 0px;
+    color: white;
+}
+      a.w-nav-link.gl-menu-link,a:visited.w-nav-link.gl-menu-link {
+          /* color: white; */
+        }
+        a:hover.w-nav-link.gl-menu-link {
+          /* color: black; */
+        }
+      /* uncomment to adjust content font size */
+      /* body #content {
+         font-size: 100%;
+      } */
+      a[href^="http://webflow"] {display:none}
+
+    </style>
+   </after>
+
+</rules>

@@ -1,0 +1,8 @@
+<h2>Front Links</h2>
+<ul id="frontlinks">
+    <li tal:repeat="link elements/links">
+          <a tal:attributes="href link/url;
+                             class link/link_class"
+           tal:content="link/title"></a>
+    </li>
+</ul>

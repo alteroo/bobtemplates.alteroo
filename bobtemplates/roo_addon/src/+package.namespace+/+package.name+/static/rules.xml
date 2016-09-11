@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    >
+
+      <!-- Include the backend theme -->
+  <xi:include href="++theme++barceloneta/backend.xml" />
+  
+   <!-- Only theme front end pages -->
+  <rules css:if-content="body.frontend#visual-portal-wrapper">
+  
+        <theme href="https://alteroo.webflow.io/" />
+        <!-- To change your theme simply change theme entry above
+            to the url of your theme (or use a local index.html)
+            <theme href="http://glossinator.webflow.com/" /> -->
+
+        <!-- Replace title with Plone's page title  -->
+        <replace css:theme="html head title" css:content="html head title" />
+
+        <!-- Drop the favicon spec coming from content; we'll use the one in the theme. -->
+        <drop content="/html/head/link[@rel='shortcut icon']" />
+
+        <!-- Copy base tag from Plone -->
+        <before css:theme-children="html head" css:content="html head base" />
+
+        <!-- Copy link, style, meta tags from Plone head -->
+        <before css:theme-children="html head"
+               content="/html/head/link | /html/head/style | /html/head/meta" />
+
+        <!-- merge classes from Plone body with theme body -->
+        <merge attributes="class" css:theme="body" css:content="body" />
+
+        <!-- Copy script tags from Plone head to end of body -->
+        <after css:theme-children="html body" css:content="html head script" />
+
+        <!-- Move inline scripts in content to end of body -->
+        <drop css:content="body script" />
+        <after css:theme-children="html body" css:content="html body script" method="raw" />
+
+ 
+     <xi:include href="custom-css.xml"/>
+</rules>
+     <xi:include href="gloss.xml"/>
+     <xi:include href="custom.xml"/>
+     <xi:include href="grid-webflow.xml"/> 
+ 
+ <!-- necessary xsl transforms for webflow compatibility -->
+ <!--
+  add extra styles somewhere
+  .gl-fieldset {
+    position:relative;
+   }
+  .gl-checkbox-input{position:relative;left:40px}
+  .gl-form-label{position:relative;left:40px;}
+ -->
+  
+ 
+<!-- Also, in order to correctly support updating a page after using Edit, you must ensure that the element #portal-column-content exists within your theme. In short, as with Plone's default theme, this element should correspond to the main content column. It will be repopulated with updated content after an edit action takes place via the toolbar. A rule similar to this is needed - in this case, the entire element is placed into the theme: -->
+
+<replace css:theme-children="#content article"
+    css:content="#portal-column-content" />
+<!--
+html element ->
+
+Unordered lists
+ul -> gl-ul
+contained li -> gl-ul-li
+
+Ordered lists
+ol -> gl-ol
+contained li -> gl-ol-li
+-->
+<!-- not being used at the moment -->
+<!--
+         <xsl:template match="ul">
+         <xsl:copy>
+            <xsl:attribute name="class">gl-ul</xsl:attribute>
+            <xsl:copy-of select="@*" />
+            <xsl:apply-templates />
+        </xsl:copy>
+        </xsl:template>
+         <xsl:template match="ol">
+         <xsl:copy>
+            <xsl:attribute name="class">gl-ol</xsl:attribute>
+            <xsl:copy-of select="@*" />
+            <xsl:apply-templates />
+        </xsl:copy>
+        </xsl:template>
+         <xsl:template match="ol/li">
+         <xsl:copy>
+            <xsl:attribute name="class">gl-ol-li</xsl:attribute>
+            <xsl:copy-of select="@*" />
+            <xsl:apply-templates />
+        </xsl:copy>
+        </xsl:template>
+         <xsl:template match="ul/li">
+         <xsl:copy>
+            <xsl:attribute name="class">gl-ul-li</xsl:attribute>
+            <xsl:copy-of select="@*" />
+            <xsl:apply-templates />
+        </xsl:copy>
+        </xsl:template>
+ -->
+</rules>
