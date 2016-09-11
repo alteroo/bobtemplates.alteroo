@@ -4,6 +4,9 @@
   <dependencies>
     <dependency>profile-collective.routes:default</dependency>
     <dependency>profile-collective.z3cform.norobots:default</dependency>
+    <dependency>profile-collective.documentviewer:default</dependency>
+    <dependency>profile-wildcard.media:default</dependency>
+    <dependency>profile-rapido.plone:default</dependency>
 {{% if package.type == 'Dexterity' %}}
     <dependency>profile-plone.app.dexterity:default</dependency>
 {{% endif %}}
