@@ -41,6 +41,7 @@ setup(
         'plone.api',
         'rapido.plone',
         'gloss.theme',
+        'collective.documentviewer',
         'collective.routes',
         'collective.z3cform.norobots',
         'wildcard.media',
