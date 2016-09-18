@@ -1,0 +1,76 @@
+[buildout]
+parts +=
+    zeoserver
+    instance1
+    instance2
+    instance-debug
+
+
+[ports]
+zeoserver = 12000
+instance1 = 12030
+instance2 = 12031 
+instance-debug = 12038
+haproxy = 12001
+
+[config]
+zeo-address = ${ports:zeoserver}
+instance1-address = ${ports:instance1}
+instance2-address = ${ports:instance2}
+instance-debug-address = ${ports:instance-debug}
+system-user =
+
+[instance-settings]
+user = admin:34adflllnereav
+debug-mode = off
+verbose-security = off
+blob-storage = ${buildout:directory}/var/blobstorage
+effective-user = ${config:system-user}
+eggs =
+    ${instance:eggs}
+zcml =
+    ${instance:zcml}
+# resources = ${buildout:directory}/resources
+event-log-max-size = 5 MB
+event-log-old-files = 5
+access-log-max-size = 20 MB
+access-log-old-files = 10
+environment-vars =
+#    PTS_LANGUAGES en
+    zope_i18n_compile_mo_files true
+
+[zeo-instance-settings]
+instance-clone = instance-settings
+zeo-client = True
+zeo-address = ${ports:zeoserver}
+shared-blob = on
+
+[zeoserver]
+recipe = plone.recipe.zeoserver
+zeo-address = ${config:zeo-address}
+pack-days = 7
+effective-user = ${config:system-user}
+
+[instance1]
+recipe = collective.recipe.zope2cluster
+<= zeo-instance-settings
+http-address = ${config:instance1-address}
+
+# You can uncomment this line to add an additional instance to the zeocluster
+[instance2]
+recipe = collective.recipe.zope2cluster
+<= zeo-instance-settings
+http-address = ${config:instance2-address}
+
+[instance-debug]
+recipe = collective.recipe.zope2cluster
+<= zeo-instance-settings
+http-address = ${config:instance-debug-address}
+debug-mode = on
+verbose-security = on
+
+[zopepy]
+recipe = zc.recipe.egg
+eggs = ${instance-settings:eggs}
+interpreter = zopepy
+scripts = zopepy

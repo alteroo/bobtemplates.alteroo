@@ -1,0 +1,20 @@
+[buildout]
+parts +=
+    haproxy-build
+    haproxy-conf
+
+[haproxy-build]
+recipe = plone.recipe.haproxy
+target = linux26
+pcre = 1
+
+[haproxy-conf]
+recipe = collective.recipe.template
+input = ${buildout:directory}/haproxy.conf.in
+output = ${buildout:directory}/haproxy.conf
+maxconn = 200
+ulimit-n = 65536
+bind = 0.0.0.0:${ports:haproxy}
+
+[versions]
+collective.recipe.template = 1.5

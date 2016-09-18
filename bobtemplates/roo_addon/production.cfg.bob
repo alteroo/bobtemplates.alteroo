@@ -1,12 +1,7 @@
 [buildout]
 extends = base.cfg
-parts =
-    instance
-    test
-    code-analysis
-    releaser
-    i18ndude
-    omelette
-    robot
-
-
+          zeo.cfg
+          haproxy.cfg
+          supervisord.cfg
+#parts =
+       

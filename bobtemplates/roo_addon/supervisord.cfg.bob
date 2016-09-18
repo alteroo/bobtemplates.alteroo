@@ -1,0 +1,19 @@
+[buildout]
+parts +=
+    supervisor
+    supervisor-conf
+    supervisor-crontab
+
+[supervisor]
+recipe = zc.recipe.egg
+eggs = supervisor
+
+[supervisor-conf]
+recipe = collective.recipe.template
+input = ${buildout:directory}/supervisord.conf.in
+output = ${buildout:directory}/supervisord.conf
+
+[supervisor-crontab]
+recipe = z3c.recipe.usercrontab
+times = @reboot
+command = ${buildout:bin-directory}/supervisord -c ${supervisor-conf:output}
