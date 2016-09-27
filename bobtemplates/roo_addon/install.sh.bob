@@ -1,5 +1,6 @@
 #!/bin/bash
 virtualenv venv
+ln -sf develop.cfg buildout.cfg
 venv/bin/python bootstrap-buildout.py
 bin/buildout
 echo "----> Adding a Plone site"
