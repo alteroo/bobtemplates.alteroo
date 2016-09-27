@@ -15,7 +15,7 @@
 
 {{% if package.type == 'Theme' %}}
   <plone:static
-      directory="static"
+      directory="theme"
       type="theme"
       name="{{{ package.dottedname }}}"
       />

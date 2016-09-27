@@ -40,12 +40,14 @@ setup(
     install_requires=[
         'plone.api',
         'rapido.plone',
+        'plone.app.mosaic',
         'gloss.theme',
         'collective.documentviewer',
         'collective.routes',
         'collective.z3cform.norobots',
         'wildcard.media',
         'Products.GenericSetup>=1.8.2',
+        'Products.PloneFormGen',
         'setuptools',
         'z3c.jbot',
 {{% if package.type == 'Theme' %}}
