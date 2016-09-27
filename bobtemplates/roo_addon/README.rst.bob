@@ -68,7 +68,7 @@ Getting Started
 To switch to development mode, symlink buildout.cfg to the develop.cfg
 ::
 
-    ln -sf buildout.cfg develop.cfg
+    ln -sf develop.cfg buildout.cfg
     bin/buildout
 
 To switch to production mode, symlink buildout.cfg to the production.cfg
@@ -76,7 +76,7 @@ To switch to production mode, symlink buildout.cfg to the production.cfg
 
 Or for production::
 
-    ln -sf buildout.cfg production.cfg
+    ln -sf production.cfg buildout.cfg
     bin/buildout
 
 .. note:: The production server relies on the zeo.cfg, supervisord.cfg and haproxy.cfg

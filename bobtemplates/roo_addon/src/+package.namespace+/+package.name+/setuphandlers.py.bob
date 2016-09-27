@@ -24,9 +24,12 @@ def setup_various(context):
 def post_install(context):
     """Post install script"""
     # Do something at the end of the installation of this package.
+    install_settings(context)
+    custom_setup(context)
+    
+def custom_setup(context):
     # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
     if True: return
-
 
     api.content.delete(api.content.get('/news'))
     api.content.delete(api.content.get('/Members'))
@@ -59,7 +62,32 @@ def post_install(context):
       )
     api.content.transition(documents, transition='publish')
 
-
+def install_settings(context):
+    """ install settings for the site """
+    NAMESPACE = 'plone.app.theming.interfaces.IThemeSettings'
+    api.portal.set_registry_record('%s.doctype' % NAMESPACE, '<!doctype html>')
+    api.portal.set_registry_record('%s.readNetwork' % NAMESPACE, True)
+    api.portal.set_registry_record(
+        'plone.site_title', u"{{{ site.title }}}"
+        )
+    api.portal.set_registry_record('plone.nonfolderish_tabs', False)
+    api.portal.set_registry_record('plone.smtp_host',u'smtp.mailgun.org')
+    api.portal.set_registry_record(
+        'plone.smtp_pass',u'changethis'
+        )
+    api.portal.set_registry_record('plone.smtp_port',587)
+    api.portal.set_registry_record(
+        'plone.smtp_userid',u'postmaster@mg.{{{ host.name }}}'
+        )
+    api.portal.set_registry_record('plone.mark_special_links',False)
+    # api.portal.set_registry_record('plone.toolbar_logo',u'/++resource++fitzritson.theme/ritsoniteflame.png')
+    api.portal.set_registry_record(
+                'plone.email_from_name', u'{{{ site.title }}} Website'
+            )
+    api.portal.set_registry_record(
+            'plone.email_from_address', 'noreply@{{{ host.name }}}'
+        )
+        
 def uninstall(context):
     """Uninstall script"""
     # Do something at the end of the uninstallation of this package.

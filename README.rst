@@ -43,25 +43,37 @@ You can find your gitlab private token at https://gitlab.com/profile/account
 
 **Step 1 - Use mrbob to initialize the site**
 
-This step will initilize the site configuration and add it to gitlab (it currently uses 'alteroo' in the namespace)
-It then creates a test installation of the site. 
+This step will initialize the site configuration, create a group and repository
+in gitlab (it currently uses 'alteroo' in the namespace e.g. alteroo-customer/customer.site)
+It then creates a test installation of the site at /Plone. 
 
 ::
 
-	virtualenv bobenv
-	bobenv/bin/pip install --upgrade pip
-	bobenv/bin/pip install bobtemplates.plone
+    virtualenv bobenv
+    bobenv/bin/pip install --upgrade pip
+    bobenv/bin/pip install bobtemplates.plone
 
-        export customer=acme
-        bobenv/bin/mrbob -O $customer.site https://github.com/alteroo/bobtemplates.alteroo/archive/master.zip#bobtemplates.alteroo-master/bobtemplates/roo_addon
+    export customer=acme
+    export template_url=https://github.com/alteroo/bobtemplates.alteroo/archive/master.zip#bobtemplates.alteroo-master/bobtemplates/roo_addon
+    bobenv/bin/mrbob -O $customer.site $template_url
 
-        bash $customer.site/init.sh
+    bash $customer.site/init.sh
 
-To view the site go to the customer.site directory and launch
+Launch the site by going to the $customer.site directory and running the instance
 ::
 
         cd $customer.site
         bin/instance fg
+        
+The site will be available at ``localhost:8080/Plone``, use the credentials ``admin:admin``
+
+** Step 2 - Customize the setuphandlers.py file
+Look for the setuphandlers file, located under src/CUSTOMER/SITE/setuphandlers.py
+
+Customize installation settings in the install_settings method
+::
+
+     change all smtp and email settings as needed
 
 
 Features

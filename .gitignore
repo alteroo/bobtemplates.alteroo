@@ -1,6 +1,7 @@
 .coverage
 .zedstate
 .installed.cfg
+buildout.cfg
 *.egg-info
 *.mo
 *.pyc
