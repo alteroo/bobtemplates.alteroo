@@ -77,8 +77,8 @@ gloss
 collective.routes
 collective.z3cform.norobots
 wildcard.media
-
-
+Products.PloneFormGen
+plone.app.mosaic
 
 Buildout
     The package is contained in a buildout that allows you to build Plone with the new package installed for testing-purposes.
@@ -107,20 +107,13 @@ Theme
     Adds a simple bootstrap-based Diazo theme in the folder ``theme/`` and registers it in ``profiles/default/theme.xml``
 
 
-Compatibility
-=============
-
-Add-ons created with ``bobtemplates.plone`` are tested to work in Plone 4.3.x and Plone 5.
-They should also work with older versions but that was not tested.
-It should work on Linux, Mac and Windows.
-
 
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder.
+Full documentation for this site can be found in the "docs" folder.
 
-It is also available online at http://docs.plone.org/develop/addons/bobtemplates.plone/bobtemplates.plone/README.html
+It is also available online at http://{{{ package.namespace }}}.alteroo-docs.appspot.com
 
 Installation
 ------------
