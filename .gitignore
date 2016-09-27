@@ -1,4 +1,5 @@
 .coverage
+.zedstate
 .installed.cfg
 *.egg-info
 *.mo
