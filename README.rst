@@ -41,6 +41,8 @@ We also assume that you're using Ubuntu 14.04 (it may work on other deb type dis
 BEFORE YOU START make a note of your gitlab private token
 You can find your gitlab private token at https://gitlab.com/profile/account
 
+.. image:: https://raw.githubusercontent.com/alteroo/bobtemplates.alteroo/master/images/private-token.png
+
 **Step 1 - Use mrbob to initialize the site**
 
 This step will initialize the site configuration, create a group and repository
