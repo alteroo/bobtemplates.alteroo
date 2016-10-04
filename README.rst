@@ -67,7 +67,7 @@ Launch the site by going to the $customer.site directory and running the instanc
         
 The site will be available at ``localhost:8080/Plone``, use the credentials ``admin:admin``
 
-** Step 2 - Customize the setuphandlers.py file
+**Step 2 - Customize the setuphandlers.py file
 Look for the setuphandlers file, located under src/CUSTOMER/SITE/setuphandlers.py
 
 Customize installation settings in the install_settings method
@@ -79,10 +79,12 @@ Customize installation settings in the install_settings method
 Features
 --------
 
-Package created with ``bobtemplates.alteroo`` use the current best-practices when creating an add-on.
-Additionally they include some things that match the Alteroo approach.
+Packages created with ``bobtemplates.alteroo`` are designed to follow best-practices where possible an sensible defaults.
+They include some things that match the Alteroo specific processes.
 
-Sites generated with this package include the following add-ons:
+Dependencies
+^^^^^^^^^^^^^^
+Sites generated with this package include the following add-ons as dependencies:
 
 rapido.plone
 gloss
@@ -126,29 +128,6 @@ Documentation
 Full documentation for this site can be found in the "docs" folder.
 
 It is also available online at http://{{{ package.namespace }}}.alteroo-docs.appspot.com
-
-Installation
-------------
-
-Use in a buildout
-^^^^^^^^^^^^^^^^^
-
-::
-
-    [buildout]
-    parts += mrbob
-
-    [mrbob]
-    recipe = zc.recipe.egg
-    eggs =
-        mr.bob
-        bobtemplates.plone
-
-
-This creates a mrbob-executable in your bin-directory.
-Call it from the ``src``-directory of your Plone project like this.::
-
-    $ ../bin/mrbob -O collective.foo bobtemplates:roo_addon
 
 
 Contribute
