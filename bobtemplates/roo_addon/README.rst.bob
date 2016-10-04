@@ -80,11 +80,15 @@ Step 1 - Check out the repository and change directory to checkout directory
     git clone git@gitlab.com:alteroo-{{{ package.namespace }}}/{{{ package.dottedname }}}.git 
     cd {{{ package.dottedname }}}
 
-Step 2 - Prime the machine
---------------------------------
+Step 2 - Prime the machine and install
+--------------------------------------------
 The following command should be run from within the buildout directory::
 
     bash prime.sh
+
+Then run the installer::
+
+    bash install.sh
 
 Step 3 - Then switch to development mode
 -------------------------------------------------------------------------------
