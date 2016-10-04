@@ -66,11 +66,13 @@ Before you Start
 ================
 Check that you have the following in place:
 
-* A shared key installed at gitlab (visit: https://gitlab.com/profile/keys)
-* Sudo privileges on the machine you are using
+* A user with sudo privileges (NOT ROOT)
+* A shared key for that user installed at gitlab (visit: https://gitlab.com/profile/keys)
+* Ensure you're working on an Ubuntu machine (virtual or real)
 
-Getting Started
-==================
+Getting Started for Development
+====================================
+
 Step 1 - Check out the repository and change directory to checkout directory
 -------------------------------------------------------------------------------
 ::
@@ -78,7 +80,13 @@ Step 1 - Check out the repository and change directory to checkout directory
     git clone git@gitlab.com:alteroo-{{{ package.namespace }}}/{{{ package.dottedname }}}.git 
     cd {{{ package.dottedname }}}
 
-Step 2 - To switch to development mode
+Step 2 - Prime the machine
+--------------------------------
+The following command should be run from within the buildout directory::
+
+    bash prime.sh
+
+Step 3 - Then switch to development mode
 -------------------------------------------------------------------------------
 Do this with a symlink of buildout.cfg to the develop.cfg::
 
