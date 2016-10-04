@@ -62,19 +62,33 @@ The setup.py file declares a list of dependencies common to Alteroo projects. Yo
 These give us a richer out of the box experience.
 
 
+Before you Start
+================
+Check that you have the following in place:
+
+* A shared key installed at gitlab
+* Sudo privileges on the machine you are using
+
 Getting Started
 ==================
-
-To switch to development mode, symlink buildout.cfg to the develop.cfg
+Step 1 - Check out the repository and change directory to checkout directory
+-------------------------------------------------------------------------------
 ::
+
+    git clone git@gitlab.com:alteroo-{{{ package.namespace }}}/{{{ package.dottedname }}}.git 
+    cd {{{ package.dottedname }}}
+
+Step 2 - To switch to development mode
+-------------------------------------------------------------------------------
+Do this with a symlink of buildout.cfg to the develop.cfg::
 
     ln -sf develop.cfg buildout.cfg
     bin/buildout
 
+Production Setup
+===================
 To switch to production mode, symlink buildout.cfg to the production.cfg
 ::
-
-Or for production::
 
     ln -sf production.cfg buildout.cfg
     bin/buildout
@@ -93,5 +107,10 @@ To synchronize data from the production server use the following command::
 
     bin/buildout -c rsync.cfg
 
+
+Oneliner to sync and set admin password to admin::
+
+    bin/buildout -c rsync.cfg && sh scripts/adminForDev.sh
+ && bin/instance fg
 
 
