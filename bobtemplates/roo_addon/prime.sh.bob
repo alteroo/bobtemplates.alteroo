@@ -6,6 +6,33 @@ sudo apt-get install ruby graphicsmagick pdftk poppler-utils poppler-data ghosts
 sudo gem install docsplit
 sudo pip install --upgrade python-gitlab
 
+# minmem is the minimum we'll work with
+# basemem is the minimum amount that needs no swapfile
+minmem='500000'
+basemem='1000000'
+memtotal=$(cat /proc/meminfo |grep MemTotal |cut -c19- |cut -d' ' -f1)
+echo "found $memtotal kB of memory"
+if [ $memtotal -gt $minmem ];
+then
+   echo "there's enough memory"
+else
+   echo "not enough memory, you need at least 512MB to run Plone"
+   exit 1
+fi
+if [ $memtotal -gt $basemem ];
+then
+   echo "we're good no need for a swap file"
+else
+   echo "we're going to need a swap file"
+   echo "attempting to add one now"
+
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
+sudo mkswap /swapfile
+sudo chmod 600 /swapfile
+sudo swapon /swapfile
+
+fi
+
 # spinner borrowed from http://fitnr.com/showing-a-bash-spinner.html
 
 PLONE_VERSION={{{ plone.version }}}
