@@ -1,6 +1,5 @@
 #common tarball names
 content.tar.gz
-*
 eggs.tar.gz 
 .pem
 
