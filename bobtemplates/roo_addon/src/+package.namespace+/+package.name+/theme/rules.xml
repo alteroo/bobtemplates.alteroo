@@ -12,7 +12,7 @@
    <!-- Only theme front end pages -->
   <rules css:if-content="body.frontend#visual-portal-wrapper">
   
-        <theme href="https://alteroo.webflow.io/" />
+        <theme href="https://glossinator.webflow.io/" />
         <!-- To change your theme simply change theme entry above
             to the url of your theme (or use a local index.html)
             <theme href="http://glossinator.webflow.com/" /> -->
