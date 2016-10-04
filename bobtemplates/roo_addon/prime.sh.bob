@@ -28,13 +28,13 @@ else
 
   if [ -z ${C9_USER+x} ]; then
 
-        echo "Oh, oh, this is C9. We can't create swap files on C9, sorry"
-
-  else
 	sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
 	sudo mkswap /swapfile
 	sudo chmod 600 /swapfile
 	sudo swapon /swapfile
+
+  else
+        echo "Oh, oh, this is C9. We can't create swap files on C9, sorry"
   fi
 
 fi
