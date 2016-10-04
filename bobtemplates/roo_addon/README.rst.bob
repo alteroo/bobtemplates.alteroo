@@ -66,7 +66,7 @@ Before you Start
 ================
 Check that you have the following in place:
 
-* A shared key installed at gitlab
+* A shared key installed at gitlab (visit: https://gitlab.com/profile/keys)
 * Sudo privileges on the machine you are using
 
 Getting Started
