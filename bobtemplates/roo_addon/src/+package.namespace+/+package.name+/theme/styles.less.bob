@@ -1,0 +1,49 @@
+/* Import Barceloneta styles */
+@import "++theme++nosmallfeat/less/barceloneta.plone.less";
+
+/* Customize whatever you want 
+@plone-sitenav-bg: pink;
+@plone-sitenav-link-hover-bg: darken(pink, 20%);
+.plone-nav > li > a {
+  color: @plone-text-color;
+}
+*/
+.gl-fieldset {position:relative;}
+.gl-checkbox-input{position:relative;left:40px}
+.gl-form-label{position:relative;left:40px;}
+.plone-breadcrumb {
+  margin-bottom: 0px;
+}
+
+/* portlets */
+.portlet .header-header.portletHeader {
+    display: block;
+    background-color: #2773ad;
+}
+.portlet .portletHeader a{
+    color:white;
+    padding:7px 20px 4px;
+    display:block;
+}
+.portlet .portletHeader a:hover{
+    text-decoration:none;
+}
+.portlet{
+    border:1px solid #2773ad;
+    
+}
+section.portletContent {
+    padding: 0px;
+}
+.portlet ul {
+    padding: 0px 0px;
+}
+.portlet li{
+    list-style:none;
+}
+.portlet ul > li.portletItem {
+    background: transparent;
+    padding: 4px 14px 8px;
+}
+.portlet ul >   li:not(:last-child)
+{border-bottom:1px solid #ddd;}

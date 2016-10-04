@@ -3,5 +3,43 @@ extends = base.cfg
           zeo.cfg
           haproxy.cfg
           supervisord.cfg
-#parts =
+parts +=
+       start
+       stop
+       status
+       restart
+       
+[start]
+recipe = collective.recipe.template
+input = inline:
+     #!/bin/bash
+     ${buildout:directory}/bin/supervisord
+output = ${buildout:directory}/bin/start
+mode = 755
+
+[stop]
+recipe = collective.recipe.template
+input = inline:
+     #!/bin/bash
+     ${buildout:directory}/bin/supervisorctl shutdown all
+output = ${buildout:directory}/bin/stop
+mode = 755
+
+[restart]
+recipe = collective.recipe.template
+input = inline:
+     #!/bin/bash
+     ${buildout:directory}/bin/supervisorctl restart instance:1
+     sleep 100
+     ${buildout:directory}/bin/supervisorctl restart instance:2
+output = ${buildout:directory}/bin/restart
+mode = 755
+
+[status]
+recipe = collective.recipe.template
+input = inline:
+     #!/bin/bash
+     ${buildout:directory}/bin/supervisorctl status
+output = ${buildout:directory}/bin/status
+mode = 755
        
