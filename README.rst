@@ -69,7 +69,8 @@ Launch the site by going to the $customer.site directory and running the instanc
         
 The site will be available at ``localhost:8080/Plone``, use the credentials ``admin:admin``
 
-**Step 2 - Customize the setuphandlers.py file
+**Step 2 - Customize the setuphandlers.py file**
+
 Look for the setuphandlers file, located under src/CUSTOMER/SITE/setuphandlers.py
 
 Customize installation settings in the install_settings method
