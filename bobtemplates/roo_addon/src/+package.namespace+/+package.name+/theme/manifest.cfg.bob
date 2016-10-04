@@ -1,6 +1,6 @@
 [theme]
 title = {{{ package.dottedname }}}
-description = A diazo theme for {{ package.namespace }}
+description = A diazo theme for {{{ package.namespace }}}
 development-css = /++theme++{{{ package.dottedname }}}/styles.less
 production-css = /++theme++{{{ package.dottedname }}}/style.css
 
