@@ -7,6 +7,14 @@
 .plone-nav > li > a {
   color: @plone-text-color;
 }
+/* adjust the navbar to fit the plone-toolbar
+.plone-toolbar-left .navbar.w-nav{
+   margin-left: @plone-left-toolbar;
+}
+.plone-toolbar-left-expanded  .navbar.w-nav{
+    margin-left:@plone-left-toolbar-expanded;
+}
+
 */
 .gl-fieldset {position:relative;}
 .gl-checkbox-input{position:relative;left:40px}
