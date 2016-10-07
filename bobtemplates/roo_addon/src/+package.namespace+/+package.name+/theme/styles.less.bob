@@ -1,5 +1,5 @@
 /* Import Barceloneta styles */
-@import "++theme++nosmallfeat/less/barceloneta.plone.less";
+@import "++theme++barceloneta/less/barceloneta.plone.less";
 
 /* Customize whatever you want 
 @plone-sitenav-bg: pink;

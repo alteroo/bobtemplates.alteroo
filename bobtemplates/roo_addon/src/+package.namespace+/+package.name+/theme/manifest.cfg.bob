@@ -2,7 +2,7 @@
 title = {{{ package.dottedname }}}
 description = A diazo theme for {{{ package.namespace }}}
 development-css = /++theme++{{{ package.dottedname }}}/styles.less
-production-css = /++theme++{{{ package.dottedname }}}/style.css
+production-css = /++theme++{{{ package.dottedname }}}/styles.css
 
 [theme:overrides]
 directory = template-overrides
