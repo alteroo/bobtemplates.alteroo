@@ -50,6 +50,7 @@ setup(
         'Products.PloneFormGen',
         'setuptools',
         'z3c.jbot',
+        'Products.QuickImporter',
 {{% if package.type == 'Theme' %}}
         'plone.app.theming',
         'plone.app.themingplugins',
