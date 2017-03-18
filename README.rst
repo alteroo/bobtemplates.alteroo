@@ -36,12 +36,23 @@ This package is most commonly used for initializing a customer site.
 We assume you have sudo privileges on your development box
 We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions)
 
-**Step 0 - Get your gitlab private token**
+**Step 0 - Get your gitlab private token and setup a reusable virtualenv**
 
 BEFORE YOU START make a note of your gitlab private token
 You can find your gitlab private token at https://gitlab.com/profile/account
 
 .. image:: https://raw.githubusercontent.com/alteroo/bobtemplates.alteroo/master/images/private-token.png
+
+The following commands prepare virtualenv called 'bobenv' which we will reuse each time we initialize a site
+::
+
+    virtualenv bobenv
+    bobenv/bin/pip install --upgrade pip
+    bobenv/bin/pip install bobtemplates.plone
+    git clone git@github.com:alteroo/bobtemplates.alteroo.git
+    cd bobtemplates.alteroo 
+    ../bobenv/bin/python setup.py develop
+    cd ..
 
 **Step 1 - Use mrbob to initialize the site**
 
@@ -50,10 +61,6 @@ in gitlab (it currently uses 'alteroo' in the namespace e.g. alteroo-customer/cu
 It then creates a test installation of the site at /Plone. 
 
 ::
-
-    virtualenv bobenv
-    bobenv/bin/pip install --upgrade pip
-    bobenv/bin/pip install bobtemplates.plone
 
     export customer=acme
     export template_url=https://github.com/alteroo/bobtemplates.alteroo/archive/master.zip#bobtemplates.alteroo-master/bobtemplates/roo_addon
