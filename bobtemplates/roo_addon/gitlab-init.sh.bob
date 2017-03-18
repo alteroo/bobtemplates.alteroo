@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ ! -f $HOME/.python-gitlab.cfg ]; then
-    echo "We did not detect a ~/.python-gitlab.cfg file (needed to automate gitlab tasks"
+    echo "We did not detect a ~/.python-gitlab.cfg file (needed to automate gitlab tasks)"
     echo " "
     echo "Let me help you to create that file now"
     read -p "What is your gitlab token? you can find it at https://gitlab.com/profile/account: " token
