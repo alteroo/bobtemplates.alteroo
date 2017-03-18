@@ -10,7 +10,7 @@ sudo pip install --upgrade python-gitlab
 # basemem is the minimum amount that needs no swapfile
 minmem='500000'
 basemem='1000000'
-memtotal=$(cat /proc/meminfo |grep MemTotal |cut -c19- |cut -d' ' -f1)
+memtotal=$(cat /proc/meminfo |grep MemTotal |cut -c18- |cut -d' ' -f1)
 echo "found $memtotal kB of memory"
 if [ $memtotal -gt $minmem ];
 then
