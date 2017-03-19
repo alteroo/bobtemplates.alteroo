@@ -26,8 +26,37 @@ bobtemplates.alteroo
 =====================
 
 ``bobtemplates.alteroo`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate packages for Plone projects.
-It is a fork of ``bobtemplates.plone`` with additional 'opinions' that are specific to the way that Alteroo configures customer projects.
+It is a fork of ``bobtemplates.plone`` with additional 'opinions' 
+that are based on how Alteroo configures customer projects.
 
+The goal is to provide a way to quickly kick-start a development environment and
+then support a well known and easy path to deployment.
+It focuses on sensible defaults that make the following tasks easy
+for newbie developers and administrators:
+
+- Setup
+- Customization
+- Deployment
+- Best practices for day to day development
+- Backup and Restore
+
+The ONLY use case that this targets is the development and management
+of a complete Plone site for a customer site followed by deployment and
+on-going management, maintenance and improvement. 
+
+Philosophy
+----------
+- Treat each customer project as a standalone product.
+- All customer code is eventually managed in a single src/ folder.
+- Manage dependecies in a pythonic way the src/*/*/setup.py file
+- If a new feature is compelling and useful enough to be reused in other projects it is
+moved upstream and out of the customer stack.
+- Deploy as a good neighbour (should work nicely with an Apache2 or nginx stack)
+- Actively make this better through what we learn in real projects
+
+Because of the underlying philosophy we don't aim to support other use cases.
+To stay focus we only officially support stable Ubuntu for now.
+It is probably not ideal for creating add-ons or themes.
 
 Quickstart
 ----------
