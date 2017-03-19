@@ -134,22 +134,6 @@ in the buildout.cfg file. We consider that approach to be less straightforward
 and not helpful when working with new developers.
 
 
-Production Setup
-===================
-To switch to production mode, symlink buildout.cfg to the production.cfg
-::
-
-    ln -sf production.cfg buildout.cfg
-    bin/buildout
-
-The production server is designed to support multiple sites on a single host
-At the moment we run each site on it's own unique port. 
-
-To configure ports use `ports.cfg`.
-
-Other supporting files that you may never need to touch include:
-zeo.cfg, supervisord.cfg and haproxy.cfg
-
 
 Synchronizing Data with rsync.cfg
 =================================
@@ -175,6 +159,28 @@ Oneliner to sync and set admin password to admin::
 Then start your dev server as normal
 
     bin/instance fg
+
+Production Setup
+================
+To deploy to production you can run the following commands
+From a user on the production server
+::
+
+    git clone git@gitlab.com:roo-{{{ package.namespace }}}/{{{ package.dottedname }}}.git 
+    cd {{{ package.dottedname }}}
+
+Configuration
+-------------
+Edit ports.cfg to ensure there are no clashes with existing services
+
+You'll need sudo privileges for this step::
+
+    bash prime.sh
+
+Finally install the production site::
+
+    bash install-production.sh
+
 
 Upcoming features
 =================
