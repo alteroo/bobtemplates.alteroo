@@ -54,23 +54,26 @@ This package is most commonly used for initializing a customer site.
 We assume you have sudo privileges on your development box.
 We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions)
 
-**Step 0 - Get your gitlab private token and setup a reusable virtualenv**
+Note for Gitlab users
+^^^^^^^^^^^^^^^^^^^^^
 
+This system can automatically prepare a gitlab project and do an initial checkin.
 BEFORE YOU START make a note of your gitlab private token
 You can find your gitlab private token at https://gitlab.com/profile/account
 
 .. image:: https://raw.githubusercontent.com/alteroo/bobtemplates.alteroo/master/images/private-token.png
 
-The following commands prepare a virtualenv called 'bobenv' which can be reuse each time you initialize a site
-::
 
-    virtualenv bobenv
-    bobenv/bin/pip install --upgrade pip
-    bobenv/bin/pip install bobtemplates.plone
-    git clone git@github.com:alteroo/bobtemplates.alteroo.git
-    cd bobtemplates.alteroo 
-    ../bobenv/bin/python setup.py develop
-    cd ..
+**Step 0 - Install and initialize bobtemplates.alteroo**
+
+The 'init-roo' command prepares a virtualenv called 'rooenv' which can be reused
+each time you want to initialize a site, you only need to run these commands
+once with the account you use for development.
+::
+   
+   git clone https://github.com/alteroo/bobtemplates.alteroo
+   cd bobtemplates.alteroo
+   bash init-roo
 
 **Step 1 - Use mrbob and bobenv to initialize the site**
 
@@ -80,18 +83,16 @@ It then creates a test installation of the site at /Plone.
 
 ::
 
+    workon bobenv
     export customer=acme
-    export template_url=https://github.com/alteroo/bobtemplates.alteroo/archive/master.zip#bobtemplates.alteroo-master/bobtemplates/roo_addon
-    
-    bobenv/bin/mrbob -O $customer.site $template_url
-    
+    mrbob -O $customer.site bobtemplates:roo_addon
     bash $customer.site/init.sh
 
 Launch the site by going to the $customer.site directory and running the instance
 ::
 
-        cd $customer.site
-        bin/instance fg
+    cd $customer.site
+    bin/instance fg
         
 The site will be available at ``localhost:8080/Plone``. 
 
