@@ -17,4 +17,5 @@ EOF
 fi
 echo "Creating project in gitlab"
 groupid=$(gitlab group create --name alteroo-{{{ package.namespace }}} --path alteroo-{{{ package.namespace }}} --visibility-level private | grep id | cut -d: -f2)
-PYTHONWARNINGS=ignore gitlab project create --name {{{ package.namespace }}}.site --path {{{ package.namespace }}}.site --namespace-id $groupid --visibility-level private
+export PYTHONWARNINGS=ignore
+gitlab project create --name {{{ package.namespace }}}.site --path {{{ package.namespace }}}.site --namespace-id $groupid --visibility-level private
