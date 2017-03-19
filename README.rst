@@ -25,12 +25,8 @@
 bobtemplates.alteroo
 =====================
 
-``bobtemplates.alteroo`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate packages for Plone projects.
-It is a fork of ``bobtemplates.plone`` with additional 'opinions' 
-that are based on how Alteroo configures customer projects.
-
-The goal is to provide a way to quickly kick-start a development environment and
-then support a well known and easy path to deployment.
+This project provides a simple way to kick-start a Plone development environment
+and then an easy path to deployment.
 It focuses on sensible defaults that make the following tasks easy
 for newbie developers and administrators:
 
