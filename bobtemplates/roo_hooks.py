@@ -141,8 +141,9 @@ def post_type(configurator, question, answer):
 
 
 def pre_dexterity_type_name(configurator, question):
-    if configurator.variables['package.type'] != 'Dexterity':
-        raise SkipQuestion
+    #if configurator.variables['package.type'] != 'Dexterity':
+    configurator.variables['package.type'] = u'Theme'
+    raise SkipQuestion
 
 
 def post_dexterity_type_name(configurator, question, answer):
