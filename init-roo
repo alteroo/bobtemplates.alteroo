@@ -1,5 +1,5 @@
 PATTERN='source /usr/local/bin/virtualenvwrapper.sh'
-TARGET=$HOME/.profile
+TARGET="$HOME/.profile"
 
 sudo pip install --upgrade virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh 
@@ -8,4 +8,4 @@ workon rooenv
 pip install --upgrade pip
 pip install bobtemplates.plone
 python setup.py develop
-grep -q -F $PATTERN $TARGET || echo $PATTERN >> $TARGET
+grep -q -F "$PATTERN" $TARGET || echo $PATTERN >> $TARGET
