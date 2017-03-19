@@ -57,13 +57,12 @@ It is distilled into the following working checklist:
 - Manage dependecies in a pythonic way the src/*/*/setup.py file
 - If a new feature is compelling and useful enough to be reused in other projects
   it is moved upstream and out of the customer stack.
-- Deployed sites should be good neighbour (should work nicely with an Apache2 or nginx stack)
+- Deployed sites should be good neighbours (should work nicely with an Apache2 or nginx stack)
 - Simplify, Simplify, Simplify
 - Actively make this better through what we learn in real projects
 
 Because of the underlying philosophy we don't aim to support other use cases.
-To stay focus we only officially support stable Ubuntu for now.
-It is probably not ideal for creating add-ons or themes.
+To stay focused we only officially support stable Ubuntu for now.
 
 Quickstart
 ----------
