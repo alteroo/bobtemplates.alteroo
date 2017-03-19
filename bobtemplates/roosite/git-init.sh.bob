@@ -1,5 +1,5 @@
 git init
-git remote add origin git@gitlab.com:alteroo-{{{ package.namespace }}}/{{{ package.namespace }}}.site.git
+git remote add origin git@gitlab.com:roo-{{{ package.namespace }}}/{{{ package.namespace }}}.site.git
 git add .
 git commit -am 'initial commit'
 git push -u origin master

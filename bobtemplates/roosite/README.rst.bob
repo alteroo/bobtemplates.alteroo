@@ -16,7 +16,7 @@ https://github.com/alteroo/bobtemplates.alteroo
 This is the complete baseline for a feature rich and secure Plone based CMS site.
 The notes below will help you to quickly customize the package to your needs.
 The repository for this package is located 
-at http://gitlab.com/alteroo-{{{ package.namespace }}}/{{{ package.namespace }}}.site
+at http://gitlab.com/roo-{{{ package.namespace }}}/{{{ package.namespace }}}.site
 
 Before you Start
 ================
@@ -50,7 +50,7 @@ Step 1 - Clone the repository and change directory to checkout directory
 -------------------------------------------------------------------------------
 ::
 
-    git clone git@gitlab.com:alteroo-{{{ package.namespace }}}/{{{ package.dottedname }}}.git 
+    git clone git@gitlab.com:roo-{{{ package.namespace }}}/{{{ package.dottedname }}}.git 
     cd {{{ package.dottedname }}}
 
 Step 2 - Prime the machine and install
