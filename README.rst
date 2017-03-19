@@ -75,17 +75,18 @@ once with the account you use for development.
    cd bobtemplates.alteroo
    bash init-roo
 
-**Step 1 - Use mrbob and bobenv to initialize the site**
+**Step 1 - Use rooenv and mrbob to initialize the site**
 
-This step will initialize the site configuration, create a group and repository
-in gitlab (it currently uses 'alteroo' in the namespace e.g. alteroo-customer/customer.site)
-It then creates a test installation of the site at /Plone. 
+This step will activate the rooenv
+and initialize the site build folder, typically named '$customer.site'.
+For gitlab repositories (it currently uses 'roo' in the namespace e.g. roo-customer/customer.site)
+It then creates a local development installation of the site at /Plone. 
 
 ::
 
     workon rooenv
     export customer=acme
-    mrbob -O $customer.site bobtemplates:roo_addon
+    mrbob -O $customer.site bobtemplates:roosite
     bash $customer.site/init.sh
 
 Launch the site by going to the $customer.site directory and running the instance
@@ -133,11 +134,6 @@ The Philosophy is a further exploration of the ideas from a presentation entitle
 It is distilled into the following working checklist:
 
 - Treat each customer project as a standalone product.
-- All customer code is eventually managed in a single src/ folder.
-- Manage dependecies in a pythonic way the src/*/*/setup.py file
-- If a new feature is compelling and useful enough to be reused in other projects
-  it is moved upstream and out of the customer stack.
-- Deployed sites should be good neighbours (should work nicely with an Apache2 or nginx stack)
 - Simplify, Simplify, Simplify
 - Actively make this better through what we learn in real projects
 
