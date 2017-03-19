@@ -1,5 +1,6 @@
 [buildout]
 extends = base.cfg
+          ports.cfg
           zeo.cfg
           haproxy.cfg
           supervisord.cfg

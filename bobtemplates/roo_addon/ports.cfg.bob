@@ -1,0 +1,6 @@
+[ports]
+zeoserver = 12000
+instance1 = 12030
+instance2 = 12031 
+instance-debug = 12038
+haproxy = 12001

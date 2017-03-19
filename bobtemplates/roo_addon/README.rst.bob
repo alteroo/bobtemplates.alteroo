@@ -27,17 +27,15 @@ Ready to use for development file is:
 
 The other files are for various tasks and often need some changes to the settings such as ports and host related settings.
 
-- production.cfg
-- rsync.cfg
-- haproxy.cfg
-- supervisord.cfg
 - base.cfg.bob    
 - develop.cfg
+- haproxy.cfg
+- ports.cfg
 - production.cfg
-- supervisord.cfg.bob
-- zeo.cfg.bob
-- haproxy.cfg 
+- rsync.cfg
+- supervisord.cfg
 - travis.cfg
+- zeo.cfg
 
 There is no buildout.cfg. This is on purpose, our recommended approach is that you symlink to the
 `develop.cfg` when doing development and to the `production.cfg` when deploying to production.
