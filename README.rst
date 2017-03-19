@@ -55,9 +55,9 @@ It is distilled into the following working checklist:
 - Treat each customer project as a standalone product.
 - All customer code is eventually managed in a single src/ folder.
 - Manage dependecies in a pythonic way the src/*/*/setup.py file
-- If a new feature is compelling and useful enough to be reused in other projects it is
-moved upstream and out of the customer stack.
-- Deploy as a good neighbour (should work nicely with an Apache2 or nginx stack)
+- If a new feature is compelling and useful enough to be reused in other projects
+  it is moved upstream and out of the customer stack.
+- Deployed sites should be good neighbour (should work nicely with an Apache2 or nginx stack)
 - Simplify, Simplify, Simplify
 - Actively make this better through what we learn in real projects
 
