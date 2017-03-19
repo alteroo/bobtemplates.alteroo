@@ -44,25 +44,7 @@ The ONLY use case that this targets is the development
 of a complete Plone site for a customer followed by deployment and
 on-going management, maintenance and improvement. 
 
-Philosophy
-----------
 
-The Philosophy is a further exploration of the ideas in this presentation
-https://docs.google.com/presentation/d/1Uv3ZOO_OjuOAWDDvTxGMjBG1f1cF91FqsNvAoMPbIxY/preview?slide=id.p
-
-It is distilled into the following working checklist:
-
-- Treat each customer project as a standalone product.
-- All customer code is eventually managed in a single src/ folder.
-- Manage dependecies in a pythonic way the src/*/*/setup.py file
-- If a new feature is compelling and useful enough to be reused in other projects
-  it is moved upstream and out of the customer stack.
-- Deployed sites should be good neighbours (should work nicely with an Apache2 or nginx stack)
-- Simplify, Simplify, Simplify
-- Actively make this better through what we learn in real projects
-
-Because of the underlying philosophy we don't aim to support other use cases.
-To stay focused we only officially support stable Ubuntu for now.
 
 Quickstart
 ----------
@@ -117,19 +99,49 @@ Use the credentials ``admin:admin``
 
 **Step 2 - Customize the setuphandlers.py file**
 
-Look for the setuphandlers file, located under `src/CUSTOMER/SITE/setuphandlers.py`
+Look for the setuphandlers file, located under `src/{CUSTOMER}/site/setuphandlers.py`
+There are two methods provided `install_settings` and `custom_setup`.
+
+Use install_settings to customize installation settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Customize installation settings in the `install_settings` method
 ::
 
      change all smtp and email settings as needed
 
+Use custom_setup to add custom content, workflow constraints etc
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Customize the `custom_setup` method, this uses the Plone API to change folders and other configuration
-at post install. For your customizations to work, you will need to comment out the following line.
+at post install. 
+
+Remember to comment line 17 (or close to that), otherwise 
+your customizations work will be ignored.
 ::
 
-    if True: return
+    if True: return # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
 
+
+Philosophy
+----------
+
+The Philosophy is a further exploration of the ideas from a presentation entitled
+`Zero to Plone: Towards faster developer onboarding 
+<https://2016.ploneconf.org/talks/from-zero-to-plone-towards-faster-developer-onboarding>`_
+
+It is distilled into the following working checklist:
+
+- Treat each customer project as a standalone product.
+- All customer code is eventually managed in a single src/ folder.
+- Manage dependecies in a pythonic way the src/*/*/setup.py file
+- If a new feature is compelling and useful enough to be reused in other projects
+  it is moved upstream and out of the customer stack.
+- Deployed sites should be good neighbours (should work nicely with an Apache2 or nginx stack)
+- Simplify, Simplify, Simplify
+- Actively make this better through what we learn in real projects
+
+Because of the underlying philosophy we don't aim to support other use cases.
+To stay focused we only officially support stable Ubuntu for now.
 
 Features
 --------

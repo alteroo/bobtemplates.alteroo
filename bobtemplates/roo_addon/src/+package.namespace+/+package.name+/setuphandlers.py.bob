@@ -13,23 +13,8 @@ class HiddenProfiles(object):
             '{{{ package.dottedname }}}:uninstall',
         ]
 
-def setup_various(context):
-    """Import script for customizations"""
-    # run customizations
-    if True: return
-
-    if context.readDataFile('{{{ package.dottedname }}}.marker.txt') is None:
-        return
-
-def post_install(context):
-    """Post install script"""
-    # Do something at the end of the installation of this package.
-    install_settings(context)
-    custom_setup(context)
-    
 def custom_setup(context):
-    # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
-    if True: return
+    if True: return # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
 
     api.content.delete(api.content.get('/news'))
     api.content.delete(api.content.get('/Members'))
@@ -87,7 +72,21 @@ def install_settings(context):
     api.portal.set_registry_record(
             'plone.email_from_address', 'noreply@{{{ host.name }}}'
         )
-        
+
+def setup_various(context):
+    """Import script for customizations"""
+    # run customizations
+    if True: return
+
+    if context.readDataFile('{{{ package.dottedname }}}.marker.txt') is None:
+        return
+
+def post_install(context):
+    """Post install script"""
+    # Do something at the end of the installation of this package.
+    install_settings(context)
+    custom_setup(context)
+    
 def uninstall(context):
     """Uninstall script"""
     # Do something at the end of the uninstallation of this package.
