@@ -72,7 +72,7 @@ spinner()
     done
     printf "    \b\b\b\b"
 }
-if [ ! -f $HOME/.python-gitlab.cfg ]; then
+if [ ! -f $HOME/.buildout/default.cfg ]; then
 echo "getting the installer"
 if [ -s $INSTALLERFILE ]  
 then  
