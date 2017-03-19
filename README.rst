@@ -83,7 +83,7 @@ It then creates a test installation of the site at /Plone.
 
 ::
 
-    workon bobenv
+    workon rooenv
     export customer=acme
     mrbob -O $customer.site bobtemplates:roo_addon
     bash $customer.site/init.sh
