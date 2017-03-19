@@ -134,8 +134,9 @@ at post install. For your customizations to work, you will need to comment out t
 Features
 --------
 
-Packages created with ``bobtemplates.alteroo`` are designed to follow best-practices where possible an sensible defaults.
-They include some things that match the Alteroo specific processes.
+Packages created with ``bobtemplates.alteroo`` are designed to follow best-practices
+where possible. We try to stay laser focused on sensible defaults and will include
+things that match Alteroo specific processes.
 
 Dependencies
 ^^^^^^^^^^^^
@@ -150,11 +151,12 @@ wildcard.media
 Products.PloneFormGen
 plone.app.mosaic
 
-Use terms
-^^^^^^^^^
+Useful terms
+^^^^^^^^^^^^
+The following terms are useful to grasp.
 
 Buildout
-    The package is contained in a buildout that allows you to build Plone with the new package installed for testing-purposes.
+    The package is a buildout directory that allows you to build Plone with the new package installed for development, testing and deployment purposes.
 
 Tests
     The package comes with a test setup and some `tests <http://docs.plone.org/external/plone.app.testing/docs/source/index.html>`_ for installing the package. It also contains a `robot-test <http://docs.plone.org/external/plone.app.robotframework/docs/source/index.html>`_ that tests logging in. The buildout also contains a config to allow testing the package on `travis <http://travis-ci.org/>`_ that sends `notifications <http://about.travis-ci.org/docs/user/notifications>`_ by email to the package author.
@@ -163,7 +165,7 @@ Profile
     The package contains a `Generic Setup Profile <http://docs.plone.org/develop/addons/components/genericsetup.html>`_ that installs a browserlayer. For Plone 5 it also contains a uninstall-profile.
 
 Locales
-    The package registers a directory for locales.
+    The package registers a directory for locales, so you can do multi-lingual sites.
 
 Template-Overrides
     The package registers the folder ``browser/overrides`` as a directory where you can drop template-overrides using `z3c.jbot <https://pypi.python.org/pypi/z3c.jbot>`_.
@@ -171,15 +173,7 @@ Template-Overrides
 Setuphandler
     The package contains a `setuphandlers.py <http://docs.plone.org/develop/addons/components/genericsetup.html?highlight=setuphandler#custom-installer-code-setuphandlers-py>`_ where you can add code that is executed on installing the package. For Plone 5 there is also a method in `setuphandler.py` that is run on uninstalling.
 
-The package-types `Dexterity` and `Theme` add the following to `Basic`:
-
-Dexterity
-    Adds a simple content-type (you get asked about its name) in ``profiles/default/types/`` with a python-schema in ``interfaces.py``.
-
-Theme
-    Adds a simple bootstrap-based Diazo theme in the folder ``theme/`` and registers it in ``profiles/default/theme.xml``
-
-
+Unlike bobtemplates.plone we do not provide additional profiles such as `Theme` and `Dexterity`
 
 Documentation
 -------------
