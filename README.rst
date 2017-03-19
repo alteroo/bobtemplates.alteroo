@@ -40,12 +40,13 @@ for newbie developers and administrators:
 - Best practices for day to day development
 - Backup and Restore
 
-The ONLY use case that this targets is the development and management
-of a complete Plone site for a customer site followed by deployment and
+The ONLY use case that this targets is the development 
+of a complete Plone site for a customer followed by deployment and
 on-going management, maintenance and improvement. 
 
 Philosophy
 ----------
+
 The Philosophy is a further exploration of the ideas in this presentation
 https://docs.google.com/presentation/d/1Uv3ZOO_OjuOAWDDvTxGMjBG1f1cF91FqsNvAoMPbIxY/preview?slide=id.p
 
@@ -66,9 +67,10 @@ It is probably not ideal for creating add-ons or themes.
 
 Quickstart
 ----------
+
 This package is most commonly used for initializing a customer site.
 
-We assume you have sudo privileges on your development box
+We assume you have sudo privileges on your development box.
 We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions)
 
 **Step 0 - Get your gitlab private token and setup a reusable virtualenv**
@@ -78,7 +80,7 @@ You can find your gitlab private token at https://gitlab.com/profile/account
 
 .. image:: https://raw.githubusercontent.com/alteroo/bobtemplates.alteroo/master/images/private-token.png
 
-The following commands prepare virtualenv called 'bobenv' which we will reuse each time we initialize a site
+The following commands prepare a virtualenv called 'bobenv' which can be reuse each time you initialize a site
 ::
 
     virtualenv bobenv
@@ -89,7 +91,7 @@ The following commands prepare virtualenv called 'bobenv' which we will reuse ea
     ../bobenv/bin/python setup.py develop
     cd ..
 
-**Step 1 - Use mrbob to initialize the site**
+**Step 1 - Use mrbob and bobenv to initialize the site**
 
 This step will initialize the site configuration, create a group and repository
 in gitlab (it currently uses 'alteroo' in the namespace e.g. alteroo-customer/customer.site)
@@ -99,8 +101,9 @@ It then creates a test installation of the site at /Plone.
 
     export customer=acme
     export template_url=https://github.com/alteroo/bobtemplates.alteroo/archive/master.zip#bobtemplates.alteroo-master/bobtemplates/roo_addon
+    
     bobenv/bin/mrbob -O $customer.site $template_url
-
+    
     bash $customer.site/init.sh
 
 Launch the site by going to the $customer.site directory and running the instance
@@ -109,7 +112,9 @@ Launch the site by going to the $customer.site directory and running the instanc
         cd $customer.site
         bin/instance fg
         
-The site will be available at ``localhost:8080/Plone``, use the credentials ``admin:admin``
+The site will be available at ``localhost:8080/Plone``. 
+
+Use the credentials ``admin:admin``
 
 **Step 2 - Customize the setuphandlers.py file**
 
@@ -134,7 +139,8 @@ Packages created with ``bobtemplates.alteroo`` are designed to follow best-pract
 They include some things that match the Alteroo specific processes.
 
 Dependencies
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+
 Sites generated with this package include the following add-ons as dependencies:
 
 rapido.plone
@@ -144,6 +150,9 @@ collective.z3cform.norobots
 wildcard.media
 Products.PloneFormGen
 plone.app.mosaic
+
+Use terms
+^^^^^^^^^
 
 Buildout
     The package is contained in a buildout that allows you to build Plone with the new package installed for testing-purposes.
@@ -186,7 +195,6 @@ Contribute
 
 - Issue Tracker: https://github.com/alteroo/bobtemplates.alteroo/issues
 - Source Code: https://github.com/alteroo/bobtemplates.alteroo
-- Documentation: 
 
 
 Support
