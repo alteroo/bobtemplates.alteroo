@@ -78,12 +78,18 @@ The site will be available at ``localhost:8080/Plone``, use the credentials ``ad
 
 **Step 2 - Customize the setuphandlers.py file**
 
-Look for the setuphandlers file, located under src/CUSTOMER/SITE/setuphandlers.py
+Look for the setuphandlers file, located under `src/CUSTOMER/SITE/setuphandlers.py`
 
-Customize installation settings in the install_settings method
+Customize installation settings in the `install_settings` method
 ::
 
      change all smtp and email settings as needed
+
+Customize the `custom_setup` method, this uses the Plone API to change folders and other configuration
+at post install. For your customizations to work, you will need to comment out the following line.
+::
+
+    if True: return
 
 
 Features
