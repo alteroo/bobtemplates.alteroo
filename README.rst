@@ -127,7 +127,7 @@ your customizations work will be ignored.
 Philosophy
 ----------
 
-The Philosophy is a further exploration of the ideas from a presentation entitled
+This is a further exploration of the ideas from a presentation entitled
 `Zero to Plone: Towards faster developer onboarding 
 <https://2016.ploneconf.org/talks/from-zero-to-plone-towards-faster-developer-onboarding>`_
 
