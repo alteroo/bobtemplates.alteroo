@@ -3,6 +3,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
 bash prime.sh
+clear
 bash gitlab-init.sh
+clear
 bash git-init.sh
+clear
 bash install.sh
