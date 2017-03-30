@@ -1,6 +1,6 @@
 PATTERN='source /usr/local/bin/virtualenvwrapper.sh'
 PATTERN2='WORKON_HOME=$HOME/.virtualenvs'
-PATTERN3='roosite () { workon rooenv; mrbob -O "$@".site bobtemplates:roosite; export customer="$@"; }'
+PATTERN3='roosite () { workon rooenv; mrbob -O "$@".site bobtemplates:roosite; deactivate; export customer="$@"; }'
 TARGET="$HOME/.profile"
 
 platform='unknown'
