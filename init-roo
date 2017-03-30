@@ -1,11 +1,39 @@
 PATTERN='source /usr/local/bin/virtualenvwrapper.sh'
+PATTERN2='WORKON_HOME=$HOME/.virtualenvs'
+PATTERN3='roosite () { workon rooenv; mrbob -O "$@".site bobtemplates:roosite; export customer="$@"; }'
 TARGET="$HOME/.profile"
 
-sudo pip install --upgrade virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh 
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+    echo "looks like we're on a Mac"
+    platform="OSX"
+fi
+if [[ $platform = 'OSX' ]]; then
+
+  sudo pip uninstall virtualenvwrapper virtualenv
+  curl -sL https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
+  curl -sL https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
+  source $HOME/.venvburrito/startup.sh
+  PATTERN='source `which virtualenvwrapper.sh`'
+
+else
+
+  sudo pip install --upgrade pip virtualenv virtualenvwrapper
+  source /usr/local/bin/virtualenvwrapper.sh 
+  WORKON_HOME=$HOME/.virtualenvs
+
+fi
+
 mkvirtualenv rooenv
 workon rooenv
 pip install --upgrade pip
 pip install bobtemplates.plone
 python setup.py develop
+if [ ! -f "$TARGET" ]; then 
+     echo "The $TARGET file does not exist, creating it";
+     touch $TARGET
+fi
 grep -q -F "$PATTERN" $TARGET || echo $PATTERN >> $TARGET
+grep -q -F "$PATTERN2" $TARGET || echo $PATTERN2 >> $TARGET
+grep -q -F "$PATTERN3" $TARGET || echo $PATTERN3 >> $TARGET

@@ -2,8 +2,18 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
-bash deps.sh
-bash memprep.sh
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+    echo "looks like we're on a Mac"
+    platform="OSX"
+fi
+if [[ $platform = 'OSX' ]]; then
+    bash homebrew_install.sh
+else
+    bash deps.sh
+    bash memprep.sh
+fi
 clear
 bash prime.sh
 clear
