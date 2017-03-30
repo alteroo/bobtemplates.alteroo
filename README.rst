@@ -82,10 +82,8 @@ If your customer name is `acme` it would look something like this.
 
 ::
 
-    export customer=acme
-    roosite $customer
-    cd $customer.site
-    bash init.sh
+    roosite acme
+    bash acme.site/init.sh
 
 Launch the site by going to the $customer.site directory and running the instance
 ::
