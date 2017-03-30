@@ -78,12 +78,14 @@ and initialize the site build folder, typically named '$customer.site'.
 For gitlab repositories (it currently uses 'roo' in the namespace e.g. roo-customer/customer.site)
 It then creates a local development installation of the site at /Plone. 
 
+If your customer name is `acme` it would look something like this.
+
 ::
 
-    workon rooenv
     export customer=acme
-    mrbob -O $customer.site bobtemplates:roosite
-    bash $customer.site/init.sh
+    roosite $customer
+    cd $customer.site
+    bash init.sh
 
 Launch the site by going to the $customer.site directory and running the instance
 ::
