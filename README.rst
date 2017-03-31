@@ -45,7 +45,7 @@ once with the account you use for development.
 ::
    
    git clone https://github.com/alteroo/roosite.launchkit
-   cd bobtemplates.alteroo
+   cd roosite.launchkit
    bash init-roo
    source ~/.bash_profile
 
