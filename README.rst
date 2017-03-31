@@ -1,4 +1,4 @@
-
+<!--
 .. image:: https://secure.travis-ci.org/plone/bobtemplates.plone.png?branch=master
     :target: http://travis-ci.org/plone/bobtemplates.plone
 
@@ -21,8 +21,9 @@
 .. image:: https://img.shields.io/pypi/l/bobtemplates.plone.svg
     :target: https://pypi.python.org/pypi/bobtemplates.plone/
     :alt: License
+-->
 
-bobtemplates.alteroo
+roosite.launchkit
 =====================
 
 This project provides a simple way to kick-start a Plone development environment
