@@ -65,7 +65,7 @@ path = /srv/production
 # Don't use a released version of {{{ package.dottedname }}}
 {{{ package.dottedname }}} =
 
-setuptools = 24.3.0
+setuptools = 
 zc.buildout = 2.5.2
 zc.recipe.egg = 2.0.3
 flake8 = 
