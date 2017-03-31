@@ -1,9 +1,15 @@
 #!/bin/bash
+source utils.sh
+e_header "Checking your gitlab configuration"
 if [ ! -f $HOME/.python-gitlab.cfg ]; then
     echo "We did not detect a ~/.python-gitlab.cfg file (needed to automate gitlab tasks)"
     echo " "
     echo "Let me help you to create that file now"
-    read -p "What is your gitlab token? you can find it at https://gitlab.com/profile/account: " token
+    echo "What is your gitlab token? Find it at https://gitlab.com/profile/account:"
+    read -p "enter your token (type 'skip' to skip): " token
+ if [[ $token = 'skip' ]]; then
+    echo "Okay.. skipping"
+ else
 cat > $HOME/.python-gitlab.cfg << EOF
 [global]
 default = gitlab
@@ -14,8 +20,14 @@ timeout = 5
 url = https://gitlab.com
 private_token = $token
 EOF
+ fi
 fi
-echo "Creating project in gitlab"
+if [[ $token = 'skip' ]]; then
+    echo "Yup.. skipping"
+else
+
+e_arrow "Creating project in gitlab"
 export PYTHONWARNINGS=ignore
 groupid=$(gitlab group create --name roo-{{{ package.namespace }}} --path roo-{{{ package.namespace }}} --visibility-level 0 | grep id | cut -d: -f2)
 gitlab project create --name {{{ package.namespace }}}.site --path {{{ package.namespace }}}.site --namespace-id $groupid --visibility-level 0
+fi
