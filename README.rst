@@ -34,7 +34,7 @@ This system can automatically prepare a gitlab project and do an initial checkin
 BEFORE YOU START make a note of your gitlab private token
 You can find your gitlab private token at https://gitlab.com/profile/account
 
-.. image:: https://raw.githubusercontent.com/alteroo/bobtemplates.alteroo/master/images/private-token.png
+.. image:: https://raw.githubusercontent.com/alteroo/roosite.launchkit/master/images/private-token.png
 
 
 **Step 0 - Install and initialize bobtemplates.alteroo**
@@ -168,19 +168,19 @@ Unlike bobtemplates.plone we do not provide additional profiles such as `Theme` 
 Documentation
 -------------
 
-Full documentation for this site can be found in the "docs" folder.
+Full documentation for this system can be found in the "docs" folder.
 
-It is also available online at http://{{{ package.namespace }}}.alteroo-docs.appspot.com
 
 
 Contribute
 ----------
-
-- Issue Tracker: https://github.com/alteroo/bobtemplates.alteroo/issues
-- Source Code: https://github.com/alteroo/bobtemplates.alteroo
+Feel free to contribute via our github repository.
+- Source Code: https://github.com/alteroo/roosite.launchkit
 
 
 Support
 -------
 
-If you are having issues, please let us know.
+If you are having issues, please let us know by using our issue tracker.
+
+- Issue Tracker: https://github.com/alteroo/roosite.launchkit/issues
