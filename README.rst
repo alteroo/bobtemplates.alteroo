@@ -48,7 +48,8 @@ Quickstart
 This package is most commonly used for initializing a customer site.
 
 We assume you have sudo privileges on your development box.
-We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions)
+We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions). We now have experimental support for Mac OS X.
+
 
 Note for Gitlab users
 ^^^^^^^^^^^^^^^^^^^^^
