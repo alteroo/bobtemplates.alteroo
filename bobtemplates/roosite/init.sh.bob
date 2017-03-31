@@ -15,14 +15,14 @@ else
     bash deps.sh
     bash memprep.sh
 fi
-clear
-e_header "priming the machine for Plone now"
-bash prime.sh
-clear
-e_header "initializing for gitlab"
+e_header "Initializing for gitlab"
 bash gitlab-init.sh
 clear
+e_header "Priming the machine for Plone now"
+bash prime.sh
+clear
+e_header "Running git init"
 bash git-init.sh
 clear
-e_header "installing site for development now"
+e_header "Installing site for development now"
 bash install.sh
