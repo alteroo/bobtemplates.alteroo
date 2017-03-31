@@ -1,8 +1,9 @@
+TARGET="$HOME/.bash_profile"
+TEMPLATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PATTERN='source /usr/local/bin/virtualenvwrapper.sh'
 PATTERN2='WORKON_HOME=$HOME/.virtualenvs'
 PATTERN3='roosite () { workon rooenv; mrbob -O "$@".site bobtemplates:roosite; deactivate; export customer="$@"; }'
-TARGET="$HOME/.bash_profile"
-
+PATTERN4='update_roo () { echo "updating roosite template"; cd $TEMPLATE_DIR; git pull }
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
@@ -37,3 +38,4 @@ fi
 grep -q -F "$PATTERN" $TARGET || echo $PATTERN >> $TARGET
 grep -q -F "$PATTERN2" $TARGET || echo $PATTERN2 >> $TARGET
 grep -q -F "$PATTERN3" $TARGET || echo $PATTERN3 >> $TARGET
+grep -q -F "$PATTERN4" $TARGET || echo $PATTERN4 >> $TARGET
