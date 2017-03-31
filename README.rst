@@ -2,8 +2,8 @@ roosite.launchkit
 =====================
 
 This project provides a simple way to kick-start a Plone development environment
-and then an easy path to deployment.
-It focuses on sensible defaults that make the following tasks easy
+and then an easy path to deployment. This is heavily based on https://github.com/plone/bobtemplates.plone,
+It focuses on making the following tasks as easy as possible
 for newbie developers and administrators:
 
 - Setup
