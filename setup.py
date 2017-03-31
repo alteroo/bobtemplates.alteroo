@@ -14,9 +14,9 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='bobtemplates.alteroo',
+    name='roosite.launchkit',
     version=version,
-    description="Templates for Alteroo projects.",
+    description="A tool to quickly kickstart a Plone based development enviroment",
     long_description=long_description,
     classifiers=[
         "Environment :: Console",
@@ -32,7 +32,7 @@ setup(
     keywords='web plone zope skeleton project',
     author='Alteroo',
     author_email='david@alteroo.com',
-    url='https://github.com/alteroo/bobtemplates.alteroo',
+    url='https://github.com/alteroo/roosite.launchkit',
     license='GPL version 2',
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
