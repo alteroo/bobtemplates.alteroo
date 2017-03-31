@@ -1,28 +1,3 @@
-<!--
-.. image:: https://secure.travis-ci.org/plone/bobtemplates.plone.png?branch=master
-    :target: http://travis-ci.org/plone/bobtemplates.plone
-
-.. image:: https://coveralls.io/repos/plone/bobtemplates.plone/badge.svg?branch=master&service=github
-    :target: https://coveralls.io/github/plone/bobtemplates.plone?branch=master
-    :alt: Coveralls
-
-.. image:: https://img.shields.io/pypi/dm/bobtemplates.plone.svg
-    :target: https://pypi.python.org/pypi/bobtemplates.plone/
-    :alt: Downloads
-
-.. image:: https://img.shields.io/pypi/v/bobtemplates.plone.svg
-    :target: https://pypi.python.org/pypi/bobtemplates.plone/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/status/bobtemplates.plone.svg
-    :target: https://pypi.python.org/pypi/bobtemplates.plone/
-    :alt: Egg Status
-
-.. image:: https://img.shields.io/pypi/l/bobtemplates.plone.svg
-    :target: https://pypi.python.org/pypi/bobtemplates.plone/
-    :alt: License
--->
-
 roosite.launchkit
 =====================
 
