@@ -120,6 +120,13 @@ your customizations work will be ignored.
 
     if True: return # COMMENT THIS LINE OUT SO THAT CUSTOMIZATIONS ACTUALLY RUN
 
+Commands
+----------
+update_roo
+    Run this to get the latest version of the roosite command
+
+roosite
+    Used to initial a new site
 
 Philosophy
 ----------
