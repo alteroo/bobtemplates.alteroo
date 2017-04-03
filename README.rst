@@ -44,10 +44,7 @@ each time you want to initialize a site, you only need to run these commands
 once with the account you use for development.
 ::
    
-   git clone https://github.com/alteroo/roosite.launchkit
-   cd roosite.launchkit
-   bash init-roo
-   source ~/.bash_profile
+   curl -L https://roosite.github.io | bash && source ~/.bash_profile
 
 **Step 1 - Use rooenv and mrbob to initialize the site**
 
