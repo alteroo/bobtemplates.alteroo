@@ -1,11 +1,19 @@
 TARGET="$HOME/.bash_profile"
 TEMPLATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PATTERN='source /usr/local/bin/virtualenvwrapper.sh'
-PATTERN2='WORKON_HOME=$HOME/.virtualenvs'
-PATTERN3='roosite () { workon rooenv; mrbob -O "$@".site bobtemplates:roosite; deactivate; export customer="$@"; }'
-PATTERN4="update_roo () { echo 'updating roosite template'; cd $TEMPLATE_DIR; git pull; }"
+LOCALE_LC='export LC_ALL=en_US.UTF-8'
+LOCALE_LANG='export LANG=en_US.UTF-8'
+VIRTUALENV_WRAPPER='source /usr/local/bin/virtualenvwrapper.sh'
+WORKON_CONFIG='WORKON_HOME=$HOME/.virtualenvs'
+ROOSITE_CMD='roosite () { workon rooenv; mrbob -O "$@".site bobtemplates:roosite; deactivate; export customer="$@"; }'
+UPDATEROO_CMD="update_roo () { echo 'updating roosite template'; cd $TEMPLATE_DIR; git pull; }"
 platform='unknown'
 unamestr=`uname`
+
+if [ ! -f "$TARGET" ]; then 
+     echo "The $TARGET file does not exist, creating it";
+     touch $TARGET
+fi
+
 if [[ "$unamestr" == 'Darwin' ]]; then
     echo "looks like we're on a Mac"
     platform="OSX"
@@ -16,13 +24,18 @@ if [[ $platform = 'OSX' ]]; then
   curl -sL https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
   curl -sL https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
   source $HOME/.venvburrito/startup.sh
-  PATTERN='source `which virtualenvwrapper.sh`'
+  VIRTUALENV_WRAPPER='source `which virtualenvwrapper.sh`'
+  # the following lines fix a known issue on OS X 
+  # see: https://coderwall.com/p/-k_93g/mac-os-x-valueerror-unknown-locale-utf-8-in-python
+  grep -q -F "$LOCALE_LC" $TARGET || echo $LOCALE_LC >> $TARGET
+  grep -q -F "$LOCALE_LANG" $TARGET || echo $LOCALE_LANG >> $TARGET
 
 else
 
   sudo pip install --upgrade pip virtualenv virtualenvwrapper
   source /usr/local/bin/virtualenvwrapper.sh 
   WORKON_HOME=$HOME/.virtualenvs
+  grep -q -F "$PATTERN" $TARGET || echo $PATTERN >> $TARGET
 
 fi
 
@@ -31,13 +44,9 @@ workon rooenv
 pip install --upgrade pip
 pip install bobtemplates.plone
 python setup.py develop
-if [ ! -f "$TARGET" ]; then 
-     echo "The $TARGET file does not exist, creating it";
-     touch $TARGET
-fi
-grep -q -F "$PATTERN" $TARGET || echo $PATTERN >> $TARGET
-grep -q -F "$PATTERN2" $TARGET || echo $PATTERN2 >> $TARGET
-grep -q -F "$PATTERN3" $TARGET || echo $PATTERN3 >> $TARGET
-grep -q -F "$PATTERN4" $TARGET || echo $PATTERN4 >> $TARGET
+grep -q -F "$VIRTUALENV_WRAPPER" $TARGET || echo $VIRTUALENV_WRAPPER >> $TARGET
+grep -q -F "$WORKON_CONFIG" $TARGET || echo $WORKON_CONFIG >> $TARGET
+grep -q -F "$ROOSITE_CMD" $TARGET || echo $ROOSITE_CMD >> $TARGET
+grep -q -F "$UPDATEROO_CMD" $TARGET || echo $UPDATEROO_CMD >> $TARGET
 
 source $TARGET
