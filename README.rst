@@ -17,25 +17,26 @@ of a complete Plone site for a customer followed by deployment and
 on-going management, maintenance and improvement. 
 
 
-
-Quickstart
-----------
-
-This package is most commonly used for initializing a customer site.
+Supported Platforms
+-------------------
 
 We assume you have sudo privileges on your development box.
 We also assume that you're using Ubuntu 14.04 (it may work on other deb type distributions). We now have experimental support for Mac OS X.
 
-
 Note for Gitlab users
 ^^^^^^^^^^^^^^^^^^^^^
 
-This system can automatically prepare a gitlab project and do an initial checkin.
+This system can automatically prepare a gitlab project and do an initial check-in to the repository.
+You will be prompted for your gitlab token.
 BEFORE YOU START make a note of your gitlab private token
 You can find your gitlab private token at https://gitlab.com/profile/account
 
 .. image:: https://raw.githubusercontent.com/alteroo/roosite.launchkit/master/images/private-token.png
 
+
+Quickstart
+----------
+This should be just called 'installation' as there really is no 'slow start'.
 
 **Step 0 - Install and initialize bobtemplates.alteroo**
 
@@ -46,24 +47,25 @@ once with the account you use for development.
    
    curl -L https://roosite.github.io | bash && source ~/.bash_profile
 
-**Step 1 - Use rooenv and mrbob to initialize the site**
+**Step 1 - Use roosite to initialize and build the site environment**
 
-This step will activate the rooenv
-and initialize the site build folder, typically named '$customer.site'.
-For gitlab repositories (it currently uses 'roo' in the namespace e.g. roo-customer/customer.site)
-It then creates a local development installation of the site at /Plone. 
+This step will initialize the site build folder (also called buildout directory), 
+named using the pattern '$customer.site'. 
 
-If your customer name is `acme` it would look something like this.
+If you choose to generate a gitlab repository (it will be placed in a group prefixed with the name 'roo' e.g. roo-customer/customer.site)
 
+If your customer name is `acme` the steps would look something like this.
+(It's a good idea to use a single word and all common letters)
 ::
 
     roosite acme
     bash acme.site/init.sh
 
-Launch the site by going to the $customer.site directory and running the instance
+Launch the site by going to the $customer.site directory and running the instance, using the example of 'acme'
+it would look like this
 ::
 
-    cd $customer.site
+    cd acme.site
     bin/instance fg
         
 The site will be available at ``localhost:8080/Plone``. 
