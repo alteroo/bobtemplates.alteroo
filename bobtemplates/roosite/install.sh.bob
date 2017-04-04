@@ -1,9 +1,26 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
+source utils.sh
 virtualenv venv
 ln -sf develop.cfg buildout.cfg
 venv/bin/python bootstrap-buildout.py
 bin/buildout
 echo "----> Adding a Plone site"
 bin/instance run scripts/addSite.py Plone
+
+clear
+echo "__________                    .__  __    "      
+echo "\______   \ ____   ____  _____|__|/  |_  ____  "
+echo " |       _//  _ \ /  _ \/  ___/  \   __\/ __ \ "
+echo " |    |   (  <_> |  <_> )___ \|  ||  | \  ___/ "
+echo " |____|_  /\____/ \____/____  >__||__|  \___  >"
+echo "        \/                  \/              \/ "
+echo " "
+e_header "Congrats! You've setup a Plone dev environment at $DIR"
+echo "run the following to start the instance"
+echo "   cd $DIR"
+echo "   bin/instance fg"
+echo " "
+echo "you can then visit your live site at http://localhost:8080 and login with admin:admin"
+
