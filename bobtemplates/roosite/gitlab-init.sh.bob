@@ -1,5 +1,7 @@
 #!/bin/bash
 source utils.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
 e_header "Checking your gitlab configuration"
 if [ ! -f $HOME/.python-gitlab.cfg ]; then
     echo "We did not detect a ~/.python-gitlab.cfg file (needed to automate gitlab tasks)"
