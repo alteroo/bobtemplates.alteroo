@@ -59,7 +59,8 @@ If your customer name is `acme` the steps would look something like this.
 ::
 
     roosite acme
-    bash acme.site/init.sh
+    cd acme.site
+    ./init.sh
 
 Launch the site by going to the $customer.site directory and running the instance, using the example of 'acme'
 it would look like this
