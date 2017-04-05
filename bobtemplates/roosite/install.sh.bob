@@ -8,10 +8,10 @@ virtualenv venv
 ln -sf develop.cfg buildout.cfg
 venv/bin/python bootstrap-buildout.py
 bin/buildout
+
 echo "----> Adding a Plone site"
 bin/instance run scripts/addSite.py Plone
 
-clear
 e_header "=="
 echo " "
 echo "__________                    .__  __    "      
