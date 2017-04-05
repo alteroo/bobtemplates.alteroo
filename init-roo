@@ -4,8 +4,9 @@ LOCALE_LC='export LC_ALL=en_US.UTF-8'
 LOCALE_LANG='export LANG=en_US.UTF-8'
 VIRTUALENV_WRAPPER='source /usr/local/bin/virtualenvwrapper.sh'
 WORKON_CONFIG='WORKON_HOME=$HOME/.virtualenvs'
+SET_TEMPLATE_DIR="export ROOSITE_TEMPLATE_DIR='$TEMPLATE_DIR'"
 ROOSITE_CMD='roosite () { workon rooenv; mrbob -O "$@".site bobtemplates:roosite; deactivate; export customer="$@"; }'
-UPDATEROO_CMD="update_roo () { echo 'updating roosite template'; cd $TEMPLATE_DIR; git pull; }"
+UPDATEROO_CMD='update_roo () { export MYDIR="$PWD"; echo "updating roosite template"; cd "$ROOSITE_TEMPLATE_DIR"; git pull; cd "$MYDIR"; }'
 platform='unknown'
 unamestr=`uname`
 
@@ -44,6 +45,7 @@ workon rooenv
 pip install --upgrade pip
 pip install bobtemplates.plone
 python setup.py develop
+grep -q -F "$SET_TEMPLATE_DIR" $TARGET || echo $SET_TEMPLATE_DIR >> $TARGET
 grep -q -F "$VIRTUALENV_WRAPPER" $TARGET || echo $VIRTUALENV_WRAPPER >> $TARGET
 grep -q -F "$WORKON_CONFIG" $TARGET || echo $WORKON_CONFIG >> $TARGET
 grep -q -F "$ROOSITE_CMD" $TARGET || echo $ROOSITE_CMD >> $TARGET
