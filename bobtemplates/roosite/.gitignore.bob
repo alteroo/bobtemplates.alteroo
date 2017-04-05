@@ -3,6 +3,7 @@ content.tar.gz
 eggs.tar.gz 
 .pem
 buildout.cfg
+*UnifiedInstaller*
 # these are ignored
 # because there is no need to automate git setup a second time
 git-init.sh
