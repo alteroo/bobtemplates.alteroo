@@ -46,9 +46,9 @@ tar xfz $INSTALLERFILE
 cd $INSTALLERFOLDER
 
 
-echo "installing (best effort)"
-./install.sh standalone --target=$BUILDOUTDIR &
-spinner $!
+#echo "installing (best effort)"
+#./install.sh standalone --target=$BUILDOUTDIR &
+#spinner $!
 
 echo "----> Adding a buildout default.cfg file"
 mkdir -p $HOME/.buildout/
