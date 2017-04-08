@@ -67,6 +67,8 @@ path = /srv/production
 
 setuptools = 
 zc.buildout = 
+pyparsing =
+appdirs =
 zc.recipe.egg = 2.0.3
 flake8 = 
 i18ndude = 4.0.1
