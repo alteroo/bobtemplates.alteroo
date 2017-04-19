@@ -9,6 +9,7 @@ develop = .
 recipe = plone.recipe.zope2instance
 user = admin:admin
 http-address = 8080
+resources = ${buildout:directory}/resources
 eggs =
     Plone
     Pillow
