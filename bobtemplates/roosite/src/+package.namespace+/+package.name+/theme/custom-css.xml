@@ -4,10 +4,11 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xi="http://www.w3.org/2001/XInclude">
-    <before css:theme-children="html head"> 
+    <!--
+      <before css:theme-children="html head"> 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     </before>
-        
+    -->    
     <after css:theme-children="html head"> 
       <style>
         @media screen and (min-width: 1200px){
