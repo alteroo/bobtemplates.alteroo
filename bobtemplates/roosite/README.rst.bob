@@ -10,36 +10,42 @@ The following documentation is written for persons who will checkout and use thi
 package for development and deployment of the
 {{{ package.namespace }}} project. If you want to generate a package like this 
 for a new project then take a look at 
-https://github.com/alteroo/bobtemplates.alteroo
+https://github.com/alteroo/roosite.launchkit
 
+Thank you (or the developer that you're working with) for using our system.
+If you are happy with the setup, reach out and let us know.
 
-This is the complete baseline for a feature rich and secure Plone based CMS site.
-The notes below will help you to quickly customize the package to your needs.
+If you have found that there is need for improvement you are encouraged to contribute to the
+project. Either by reporting bugs or contributing updates.
+
+This package represents over a decade of experience working with Plone.
+The goal is to make it as easy as possible to build a feature rich and secure Plone based CMS site.
+The notes below provide guidelines for customizing the package to your needs.
 The repository for this package is located 
 at http://gitlab.com/roo-{{{ package.namespace }}}/{{{ package.namespace }}}.site
 
 Before you Start
 ================
 
-Having the following in place will absolutely simplify your experience, if
-find ways to improve the experience you are encouraged to contribute to the
-Piano project.
+Having the following in place will absolutely simplify your experience.
 
-* Ensure you're working on an Ubuntu machine (virtual or real)
+* Ensure you're doing development on an Ubuntu or Debian based machine (virtual or real). We now have experimental support for OS X also
+  so you could get away with that.
 * The user that executes the scripts should have sudo privileges (DON'T USE THE ROOT USER)
-* A shared key for that user installed at gitlab (visit: https://gitlab.com/profile/keys)
 
 Compatibility
 -------------
-It is expected that you will be doing development on an Ubuntu Linux system.
-This has been tested on a crouton based Ubuntu 14.04 on ChromeOS and on
-Cloud9 IDE. This has not been test on MacOS X and will likely not work because
-some scripts rely on the apt-get package manager. It has not been thoroughly 
+It is expected that you will be doing development on an Ubuntu Linux, Debian or OS X (experimental) system.
+This has been tested on a crouton based Ubuntu 14.04 on ChromeOS, on
+Cloud9 IDE and OS X. 
+This will not work on Fedora or Centos because 
+some scripts rely on the apt-get package manager (or homebrew on OS X).
+It has not been thoroughly 
 tested on Debian but should work on the latest stable releases.
 
-For deployment you should ideally have about 1GB of RAM however
+For development you should ideally have about 1GB of RAM however
 we've done a few tricks to support machines with less RAM, we don't recommend
-that you venture below 512MB for deployments.
+that you venture below 512MB if you value your sanity and productivity.
 
 Development Quickstart
 ======================
@@ -77,16 +83,16 @@ The .cfg files manage the characteristics of the site environment.
 They make it possible for us to automate complex interactions 
 in a predictable and configurable manner.
 
-The `develop.cfg` is the one used for setting up a
+The ``develop.cfg`` is the one used for setting up a
 development environment and is enabled by default. 
 
-The `production.cfg` is used for deploying production environments.
+The ``production.cfg`` is used for deploying production environments.
 These files are discussed in more detail below.
 
-Old school Plone developers may notice that there is no buildout.cfg. 
-This is not an accident, the recommended approach is that you symlink to the
-`develop.cfg` when doing development file during development
-and to the `production.cfg` when deploying to production.
+Old school Plone developers may notice that there is no ``buildout.cfg``. 
+This is not an accide`nt, the recommended approach is that you symlink to the
+``develop.cfg`` when doing development file during development
+and to the ``production.cfg`` when deploying to production.
 
 Apart from these files, we also include the following supporting files:
 
@@ -134,17 +140,16 @@ in the buildout.cfg file. We consider that approach to be less straightforward
 and not helpful when working with new developers.
 
 
-
 Synchronizing Data with rsync.cfg
 =================================
 During development is it often useful to work on real data.
 
-.. warning:: ALWAYS pull data from production no where else!
+.. warning:: ALWAYS pull data from production, under NO circumstance should data be travelling from a development machine to a production machine.
 
 Before you start
 ----------------
 
-1. Edit rsync.cfg to point at the correct server
+1. Edit ``rsync.cfg`` to point at the correct server
 2. Make sure that your dev user account have shared keys with the production server
  
 To synchronize data from the production server use the following command::

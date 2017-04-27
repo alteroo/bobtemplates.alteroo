@@ -23,6 +23,23 @@ directory = ${buildout:directory}/src/{{{ package.namespace }}}
 flake8-exclude = bootstrap.py,bootstrap-buildout.py,docs,*.egg.,omelette
 flake8-max-complexity = 15
 
+[defang]
+recipe = zc.recipe.egg
+eggs =
+    isotoma.plone.defang
+    ${instance:eggs}
+extra-paths =
+    ${instance:location}
+scripts = defang
+arguments =
+    fangs = {
+        "${buildout:directory}/var/filestorage/Data.fs": [
+            isotoma.plone.defang.UserFang('/acl_users/admin:admin')
+    ],},
+    productdistros="",
+    instance="${instance:location}",
+    zconfig="${instance:location}/etc/zope.conf"
+
 
 [omelette]
 recipe = collective.recipe.omelette
