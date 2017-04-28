@@ -2,12 +2,22 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 source utils.sh
+source spinner.sh
+SPINNER_SYMBOLS="WIDE_UNI_GREYSCALE"
+
 virtualenv venv
 ln -sf develop.cfg buildout.cfg
 venv/bin/python bootstrap-buildout.py
-bin/buildout
+spinner &
+bin/buildout -qq 
+touch stopspinning
 echo "----> Adding a Plone site"
-bin/instance run scripts/addSite.py Plone
+bin/instance run scripts/addSite.py Plone 
+if [ $? -gt 0 ]; then
+	    e_error "There was a problem during installation"
+	        "Try running the 'bin/buildout' command"
+		    exit 1
+	    fi
 
 clear
 e_header "=="
@@ -19,12 +29,16 @@ echo " |    |   (  <_> |  <_> )___ \|  ||  | \  ___/ "
 echo " |____|_  /\____/ \____/____  >__||__|  \___  >"
 echo "        \/                  \/              \/ "
 echo " "
-e_header "Congrats! You've setup a Plone dev environment at $DIR"
+e_header "Congrats! Dev enviroment ready"
+echo " "
+echo "You've setup a Plone dev environment at $DIR"
 echo " "
 echo "To get started, run the following commands"
 echo " "
 echo "   cd $DIR"
 echo "   bin/instance fg"
 echo " "
-echo "Once it has started, visit your new site at http://localhost:8080 and login with admin:admin"
+echo "Once it has started, visit your new site at http://localhost:8080"
+echo " "
+echo "Your login credentials are admin:admin"
 echo " "
