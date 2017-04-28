@@ -39,7 +39,7 @@ You can find your gitlab private token at https://gitlab.com/profile/account
 Installation
 -------------
 
-**Step 0 - Install and initialize bobtemplates.alteroo**
+**Step 0 - Install and initialize**
 
 The 'init-roo' command prepares a virtualenv called 'rooenv' which can be reused
 each time you want to initialize a site, you only need to run these commands
