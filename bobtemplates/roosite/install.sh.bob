@@ -20,7 +20,8 @@ if [ $? -gt 0 ]; then
 	    fi
 
 clear
-e_header "=="
+         
+e_header "==============="
 echo " "
 echo "__________                    .__  __    "      
 echo "\______   \ ____   ____  _____|__|/  |_  ____  "
@@ -29,9 +30,9 @@ echo " |    |   (  <_> |  <_> )___ \|  ||  | \  ___/ "
 echo " |____|_  /\____/ \____/____  >__||__|  \___  >"
 echo "        \/                  \/              \/ "
 echo " "
-e_header "Congrats! Dev enviroment ready"
+e_header "You're all set!"
 echo " "
-echo "You've setup a Plone dev environment at $DIR"
+echo "Congrat! You've setup a Plone dev environment at $DIR"
 echo " "
 echo "To get started, run the following commands"
 echo " "
