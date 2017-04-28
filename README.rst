@@ -36,9 +36,8 @@ You can find your gitlab private token at https://gitlab.com/profile/account
 .. image:: https://raw.githubusercontent.com/alteroo/roosite.launchkit/master/images/private-token.png
 
 
-Quickstart
-----------
-This should be just called 'installation' as there really is no 'slow start'.
+Installation
+-------------
 
 **Step 0 - Install and initialize bobtemplates.alteroo**
 
