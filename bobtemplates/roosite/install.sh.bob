@@ -15,7 +15,8 @@ echo "----> Adding a Plone site"
 bin/instance run scripts/addSite.py Plone 
 if [ $? -gt 0 ]; then
 	    e_error "There was a problem during installation"
-	        "Try running the 'bin/buildout' command"
+	    echo    "      Go to your buildout folder ($DIR)"
+            echo    "      and try running the 'bin/buildout' command"
 		    exit 1
 	    fi
 
