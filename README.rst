@@ -1,20 +1,22 @@
 roosite.launchkit
 =====================
 
-This project provides a simple way to kick-start a Plone development environment
-and then an easy path to deployment. This is heavily based on https://github.com/plone/bobtemplates.plone,
-It focuses on making the following tasks as easy as possible
-for newbie developers and administrators:
+This is an opinionated project with only one mission: make it as easy as possible to develop, deploy and maintain
+a complete Plone site. 
 
-- Setup
+The project provides a simple way to:
+
+- generate and share a Plone development environment.
+- deploy your customizations into production
+
+This is heavily based on https://github.com/plone/bobtemplates.plone.
+It targets newbie developers and administrators by focusing
+on streamling the following tasks:
+
+- Setup 
 - Customization
-- Deployment
-- Best practices for day to day development
-- Backup and Restore
-
-The ONLY use case that this targets is the development 
-of a complete Plone site for a customer followed by deployment and
-on-going management, maintenance and improvement. 
+- Deployment (work in progress)
+- Backup and Restore (work in progress)
 
 
 Supported Platforms
