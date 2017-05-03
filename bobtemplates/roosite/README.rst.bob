@@ -140,6 +140,20 @@ in the buildout.cfg file. We consider that approach to be less straightforward
 and not helpful when working with new developers.
 
 
+Quickly sharing Datafiles
+=========================
+There is a pack and unpack script for quick sharing of data between developers.
+To create a packed data distribution run the following command::
+
+    bash packitup.sh
+
+    This will create a `packeddb.tgz` file in your buildout folder.
+    Give this to a fellow developer.
+
+    To use a `packeddb.tgz` file place it in your buildout folder and run::
+
+        bash unpackit.sh
+
 Synchronizing Data with rsync.cfg
 =================================
 During development is it often useful to work on real data.
