@@ -9,15 +9,15 @@ parts += data
 recipe = collective.recipe.rsync
 account = plone@{{{ host.name }}}
 path = /home/plone/{{{ package.dottedname }}}
-source = ${database:account}:${database:path}/var/filestorage/Data.fs
+source = ${data:account}:${data:path}/var/filestorage/Data.fs
 target = ${buildout:directory}/var/filestorage/Data.fs
 
 [blob]
 recipe = collective.recipe.rsync
-source = ${database:account}:${database:path}/var/blobstorage
+source = ${data:account}:${data:path}/var/blobstorage
 target = ${buildout:directory}/var/
 
 [archived]
 recipe = collective.recipe.rsync
-source = ${database:account}:${database:path}/archived
+source = ${data:account}:${data:path}/archived
 target = ${buildout:directory}
