@@ -25,8 +25,10 @@ Launch your new site
     
 Access your site on port 8080 by visiting http://localhost:8080 in your browser.
 
-Learn more by reading the following documents
+Learn more by reading the following documents:
 
 BACKGROUND
+
 INSTALL
+
 USAGE
