@@ -1,6 +1,32 @@
 roosite.launchkit
 =====================
 
+Quick Start
+---------------
+Install the roosite launchkit with this command
+::
+
+    curl -L https://roosite.github.io | bash && source ~/.bash_profile
+
+On a day to day basis you can generate a new site using these commands
+::
+
+    roosite acme
+    cd acme.site
+    bash init.sh
+
+Launch your new site
+::
+
+    bin/instance fg
+    
+Access your site on port 8080 by visiting http://localhost:8080 in your browser.
+
+    
+
+Background
+-------------
+
 This is an opinionated project with only one mission: make it as easy as possible to develop, deploy and maintain
 a complete Plone site. 
 
@@ -60,13 +86,13 @@ If your customer name is `acme` the steps would look something like this.
 ::
 
     roosite acme
-    bash acme.site/init.sh
+    cd acme.site
+    bash init.sh
 
 Launch the site by going to the $customer.site directory and running the instance, using the example of 'acme'
 it would look like this
 ::
 
-    cd acme.site
     bin/instance fg
         
 The site will be available at ``localhost:8080/Plone``. 
