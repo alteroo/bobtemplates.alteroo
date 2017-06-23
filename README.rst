@@ -14,6 +14,7 @@ On a day to day basis you can generate a new site using the command ``roosite pr
     roosite acme
 
 This create a directory called `acme.site`, change directory to the acme.site directory and initialize your new site.
+::
 
     cd acme.site
     bash init.sh
