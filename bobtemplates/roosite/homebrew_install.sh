@@ -15,10 +15,10 @@ if [[ $? != 0 ]] ; then
    e_header "Installing Homebrew"
    /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 #   brew doctor
-else
+fi
    e_header "Updating Homebrew"
    brew update
-fi
+
 
 # Let us check if we have already some dependencies installed:
 e_header "Check Homebrew Packages"
