@@ -98,7 +98,7 @@ selenium = 2.53.6
 plone.testing = 5.0.0
 
 # rapido.plone pins
-rapido.plone = 1.1
+rapido.plone = 1.1.1
 plone.resource = 1.2
 
 # mosaic version pins
