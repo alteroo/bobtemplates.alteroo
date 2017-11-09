@@ -1,6 +1,7 @@
 [buildout]
 extends = http://dist.plone.org/release/{{{ plone.version }}}/versions.cfg
 show-picked-versions = true
+index = https://pypi.python.org/simple/
 extensions = mr.developer
 parts =
 develop = .
