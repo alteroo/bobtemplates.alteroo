@@ -65,7 +65,6 @@ def install_settings(context):
         'plone.smtp_userid',u'postmaster@mg.{{{ host.name }}}'
         )
     api.portal.set_registry_record('plone.mark_special_links',False)
-    # api.portal.set_registry_record('plone.toolbar_logo',u'/++resource++fitzritson.theme/ritsoniteflame.png')
     api.portal.set_registry_record(
                 'plone.email_from_name', u'{{{ site.title }}} Website'
             )
