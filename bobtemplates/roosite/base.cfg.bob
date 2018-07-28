@@ -86,6 +86,7 @@ path = /srv/production
 
 setuptools = 
 pyparsing = 
+pycodestyle = 2.3.1
 appdirs = 
 zc.buildout = 2.5.2
 zc.recipe.egg = 2.0.3
@@ -97,6 +98,7 @@ robotframework-selenium2library = 1.7.4
 robotsuite = 1.7.0
 selenium = 2.53.6
 plone.testing = 5.0.0
+plone.recipe.zope2instance = 4.4.0
 
 # rapido.plone pins
 rapido.plone = 1.1.1
