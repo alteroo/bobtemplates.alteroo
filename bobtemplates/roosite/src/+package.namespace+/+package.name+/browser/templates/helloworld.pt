@@ -28,6 +28,7 @@
           
         <div id="app"></div>  
         <script src="++resource++{{{ package.dottedname }}}/js/helloworld.js?cachebust1"></script>  
+        <p tal:content="view/portal"></p>
       </metal:content-core>
 </metal:content-core>
 </body>
