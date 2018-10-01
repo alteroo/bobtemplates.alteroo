@@ -18,4 +18,15 @@
       directory="static"
       />
 
+  <!-- uncomment to use below -->
+  <!--
+  <browser:page
+      for="*"
+      name="helloworld"
+      permission="zope2.Public"
+      class=".views.HelloWorld"
+      template="templates/helloworld.pt"
+      />
+   -->
+
 </configure>
