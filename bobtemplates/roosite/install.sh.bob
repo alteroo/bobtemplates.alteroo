@@ -5,7 +5,7 @@ source utils.sh
 source spinner.sh
 SPINNER_SYMBOLS="WIDE_UNI_GREYSCALE"
 
-virtualenv venv
+virtualenv -p python2.7 venv
 ln -sf develop.cfg buildout.cfg
 venv/bin/python bootstrap-buildout.py
 spinner &
