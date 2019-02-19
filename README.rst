@@ -6,6 +6,7 @@ Quick Start
 Make sure you have a few dependencies (curl and pip) installed
 ::
 
+    sudo apt update
     sudo apt install curl python-pip
 
 Install the roosite launchkit with this command
