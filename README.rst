@@ -36,8 +36,8 @@ Access your site on port 8080 by visiting http://localhost:8080 in your browser.
 
 Learn more by reading the following documents:
 
-[BACKGROUND](BACKGROUND.rst)
+`BACKGROUND <BACKGROUND.rst>`_
 
-[INSTALL](INSTALL.rst)
+`INSTALL <INSTALL.rst>`_
 
-[USAGE](USAGE.rst)
+`USAGE<USAGE.rst>`_
