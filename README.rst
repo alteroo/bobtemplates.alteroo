@@ -40,4 +40,4 @@ Learn more by reading the following documents:
 
 `INSTALL <INSTALL.rst>`_
 
-`USAGE<USAGE.rst>`_
+`USAGE <USAGE.rst>`_
