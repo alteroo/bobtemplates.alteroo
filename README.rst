@@ -25,7 +25,7 @@ This creates a directory called `acme.site`, change directory to the acme.site d
     cd acme.site
     bash init.sh
 
-If the initial build fails then run `bin/buildout` to attempt the build again.
+If the initial build fails then run ``bin/buildout`` to attempt the build again.
 
 Launch your new site
 ::
