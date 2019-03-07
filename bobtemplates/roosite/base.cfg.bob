@@ -79,6 +79,13 @@ recipe = collective.hostout
 host = {{{ host.name }}}
 path = /srv/production
 
+[zopepy]
+# installs a zopepy python interpreter that runs with your
+# full Zope environment
+recipe = zc.recipe.egg
+eggs = ${buildout:eggs}
+interpreter = zopepy
+scripts = zopepy
 
 [versions]
 # Don't use a released version of {{{ package.dottedname }}}
