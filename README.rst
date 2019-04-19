@@ -12,7 +12,7 @@ Make sure you have a few dependencies (curl and pip) installed
 Install the roosite launchkit with this command
 ::
 
-    curl -L https://roosite.github.io | bash && source ~/.bash_profile
+    curl -L https://roosite.github.io | bash && source ~/.bashrc
 
 On a day to day basis you can generate a new site using the command ``roosite project``. For example if you're doing a site for ACME ltd, you might name your project 'acme'
 ::
