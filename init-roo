@@ -1,4 +1,4 @@
-TARGET="$HOME/.bash_profile"
+TARGET="$HOME/.bashrc"
 TEMPLATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 LOCALE_LC='export LC_ALL=en_US.UTF-8'
 LOCALE_LANG='export LANG=en_US.UTF-8'
