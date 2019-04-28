@@ -8,3 +8,4 @@ parts =
     i18ndude
     omelette
     robot
+    vscode
