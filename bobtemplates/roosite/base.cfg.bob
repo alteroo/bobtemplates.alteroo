@@ -87,6 +87,14 @@ eggs = ${buildout:eggs}
 interpreter = zopepy
 scripts = zopepy
 
+[vscode]
+recipe = collective.recipe.vscode
+eggs = ${buildout:eggs}
+flake8-enabled = True
+flake8-path = ${buildout:directory}/bin/flake8
+black-enabled = True
+black-args = ----line-length 88
+
 [versions]
 # Don't use a released version of {{{ package.dottedname }}}
 {{{ package.dottedname }}} =
