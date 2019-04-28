@@ -1,6 +1,15 @@
 roosite.launchkit
 =====================
 
+Before you start
+----------------
+Ensure that locales are properly setup on your machine.
+For an Ubuntu/Debian machine you might do something like this::
+
+    export LC_ALL="en_US.UTF-8"
+    export LC_CTYPE="en_US.UTF-8"
+    sudo dpkg-reconfigure locales
+
 Quick Start
 ---------------
 Make sure you have a few dependencies (curl and pip) installed
